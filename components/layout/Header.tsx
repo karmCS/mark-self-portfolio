@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import NavMenu from '@/components/ui/menu-hover-effects';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -16,12 +17,6 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
-    { name: 'Projects', href: '/projects' },
-  ];
-
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
@@ -31,26 +26,15 @@ export default function Header() {
         scrolled ? 'bg-portfolio-bg-primary/90 backdrop-blur-md border-b border-portfolio-border' : 'bg-transparent'
       }`}
     >
-      <nav className="max-w-content mx-auto px-4 sm:px-8 md:px-16 py-6">
+      <div className="max-w-content mx-auto px-4 sm:px-8 md:px-16 py-6">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-xl font-serif font-semibold hover:text-portfolio-accent transition-colors">
             Portfolio
           </Link>
 
-          <ul className="flex items-center gap-8">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <Link
-                  href={link.href}
-                  className="text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors text-sm tracking-wide uppercase"
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <NavMenu />
         </div>
-      </nav>
+      </div>
     </motion.header>
   );
 }
