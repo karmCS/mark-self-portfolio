@@ -1,9 +1,32 @@
-import NavMenu from "@/components/ui/menu-hover-effects";
+"use client";
+import React from "react";
+import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+import Image from "next/image";
 
 export default function DemoPage() {
   return (
-    <div className="flex w-full h-screen justify-center items-center bg-white">
-      <NavMenu />
+    <div className="flex flex-col overflow-hidden bg-portfolio-bg-primary">
+      <ContainerScroll
+        titleComponent={
+          <>
+            <h1 className="text-4xl font-semibold text-portfolio-text-primary">
+              Unleash the power of <br />
+              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                Scroll Animations
+              </span>
+            </h1>
+          </>
+        }
+      >
+        <Image
+          src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1400&h=720&fit=crop"
+          alt="hero"
+          height={720}
+          width={1400}
+          className="mx-auto rounded-2xl object-cover h-full object-left-top"
+          draggable={false}
+        />
+      </ContainerScroll>
     </div>
   );
 }
