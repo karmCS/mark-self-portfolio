@@ -16,15 +16,15 @@ function PipelineStage({ title, description, delay, highlight }: StageProps) {
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay, duration: 0.6, ease: "easeOut" }}
       className={`
-        rounded-lg p-6 shadow-lg
-        ${highlight 
-          ? 'bg-green-900/20 border-2 border-green-500 shadow-green-500/20' 
-          : 'bg-slate-800/50 border border-slate-700'
+        rounded p-3
+        ${highlight
+          ? 'bg-green-900/10 border border-green-500/30'
+          : 'bg-slate-800/30 border border-slate-700/50'
         }
       `}
     >
-      <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-sm text-slate-400">{description}</p>
+      <h4 className="text-sm font-semibold mb-1 text-slate-200">{title}</h4>
+      <p className="text-xs text-slate-400 leading-snug">{description}</p>
     </motion.div>
   );
 }
@@ -35,11 +35,11 @@ function AnimatedArrow({ delay }: { delay: number }) {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.4 }}
-      className="flex justify-center my-4"
+      className="flex justify-center my-2"
     >
-      <svg width="24" height="40" viewBox="0 0 24 40" className="text-slate-500">
-        <line x1="12" y1="0" x2="12" y2="32" stroke="currentColor" strokeWidth="2" />
-        <polygon points="12,40 6,30 18,30" fill="currentColor" />
+      <svg width="16" height="24" viewBox="0 0 16 24" className="text-slate-600">
+        <line x1="8" y1="0" x2="8" y2="18" stroke="currentColor" strokeWidth="1.5" />
+        <polygon points="8,24 4,18 12,18" fill="currentColor" />
       </svg>
     </motion.div>
   );
@@ -47,8 +47,8 @@ function AnimatedArrow({ delay }: { delay: number }) {
 
 export function CICDPipeline() {
   return (
-    <div className="w-full max-w-3xl mx-auto p-8 bg-slate-900/50 rounded-xl border border-slate-800">
-      <h2 className="text-2xl font-bold mb-8 text-center">CI/CD Pipeline</h2>
+    <div className="w-full max-w-xl mx-auto my-12 p-6 bg-slate-900/30 rounded-lg border border-slate-800">
+      <h3 className="text-lg font-serif mb-6 text-center text-slate-200">CI/CD Pipeline</h3>
       
       <PipelineStage 
         title="Developer Push"

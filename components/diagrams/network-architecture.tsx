@@ -10,30 +10,30 @@ interface NetworkNodeProps {
 }
 
 function NetworkNode({ title, description, delay, position }: NetworkNodeProps) {
-  const bgColor = position === 'top' ? 'bg-purple-900/20 border-purple-500' 
-                : position === 'middle' ? 'bg-blue-900/20 border-blue-500'
-                : 'bg-green-900/20 border-green-500';
-  
+  const bgColor = position === 'top' ? 'bg-blue-900/10 border-blue-500/30'
+                : position === 'middle' ? 'bg-blue-900/10 border-blue-500/30'
+                : 'bg-green-900/10 border-green-500/30';
+
   return (
     <motion.div
       initial={{ opacity: 0, y: position === 'top' ? -30 : position === 'bottom' ? 30 : 0 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.6 }}
-      className={`rounded-lg p-4 border-2 ${bgColor}`}
+      className={`rounded p-3 border ${bgColor}`}
     >
-      <h4 className="font-bold mb-1">{title}</h4>
-      <p className="text-xs text-slate-400">{description}</p>
+      <h4 className="font-semibold mb-1 text-sm text-slate-200">{title}</h4>
+      <p className="text-xs text-slate-400 leading-snug">{description}</p>
     </motion.div>
   );
 }
 
 export function NetworkArchitecture() {
   return (
-    <div className="w-full max-w-5xl mx-auto p-8 bg-slate-900/50 rounded-xl border border-slate-800">
-      <h2 className="text-2xl font-bold mb-8 text-center">Network Flow</h2>
-      
+    <div className="w-full max-w-2xl mx-auto my-12 p-6 bg-slate-900/30 rounded-lg border border-slate-800">
+      <h3 className="text-lg font-serif mb-6 text-center text-slate-200">Network Flow</h3>
+
       {/* Internet/User Layer */}
-      <div className="mb-6">
+      <div className="mb-4">
         <NetworkNode 
           title="Public Internet"
           description="User requests markcalip.com"
@@ -43,17 +43,17 @@ export function NetworkArchitecture() {
       </div>
       
       {/* Cloudflare Layer */}
-      <div className="mb-6">
-        <NetworkNode 
+      <div className="mb-4">
+        <NetworkNode
           title="Cloudflare Tunnel"
           description="SSL termination, DDoS protection, CDN caching"
           delay={0.5}
           position="middle"
         />
       </div>
-      
+
       {/* Homelab Entry */}
-      <div className="mb-6">
+      <div className="mb-4">
         <NetworkNode 
           title="Caddy Reverse Proxy (VM 1)"
           description="Routes traffic to *.friday.local domains"
@@ -63,7 +63,7 @@ export function NetworkArchitecture() {
       </div>
       
       {/* Services Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
         <NetworkNode 
           title="k3s Cluster (VM 3)"
           description="Portfolio website on NodePort 30080"
