@@ -3,6 +3,8 @@ name: Build and Deploy
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - 'k8s/deployment.yaml'
   workflow_dispatch:
 
 env:
@@ -40,14 +42,12 @@ jobs:
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.tag.outputs.TAG }}
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
 
-      - name: Update deployment manifest
-        run: |
-          sed -i "s|image: ghcr.io/karmcs/mark-portfolio:.*|image: ghcr.io/karmcs/mark-portfolio:${{ steps.tag.outputs.TAG }}|" k8s/deployment.yaml
-
-      - name: Commit and push updated manifest
-        run: |
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git add k8s/deployment.yaml
-          git diff-index --quiet HEAD || git commit -m "Update image to ${{ steps.tag.outputs.TAG }} [skip ci]"
-          git push
+      - name: Deploy to k3s via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            kubectl set image deployment/portfolio portfolio=ghcr.io/karmcs/mark-portfolio:${{ steps.tag.outputs.TAG }} -n default
+            kubectl rollout status deployment/portfolio -n default
