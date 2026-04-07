@@ -14,7 +14,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-normal mb-6"
         >
-          Your Name
+          Mark Calip
         </motion.h1>
 
         <motion.p
@@ -32,7 +32,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.7 }}
           className="text-base sm:text-lg text-portfolio-text-secondary max-w-2xl mx-auto mb-12 leading-relaxed"
         >
-          Building innovative solutions at the intersection of hardware and software
+          A motivated computer engineering student wanting to expand my knowledge and build intelligent systems in the world of automation and AI
         </motion.p>
 
         <motion.div

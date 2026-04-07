@@ -17,8 +17,7 @@ export default function Projects() {
               Projects
             </h1>
             <p className="text-portfolio-text-secondary text-lg mb-16 max-w-2xl">
-              A collection of projects showcasing my work in software
-              development, embedded systems, and hardware design.
+              A collection of projects showcasing my work as I learn more about the world of development operations.
             </p>
           </FadeInView>
 
