@@ -13,7 +13,7 @@ env:
 
 jobs:
   build-and-deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     permissions:
       contents: write
       packages: write
@@ -42,12 +42,7 @@ jobs:
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.tag.outputs.TAG }}
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
 
-      - name: Deploy to k3s via SSH
-        uses: appleboy/ssh-action@v1.0.0
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            kubectl set image deployment/portfolio portfolio=ghcr.io/karmcs/mark-portfolio:${{ steps.tag.outputs.TAG }} -n default
-            kubectl rollout status deployment/portfolio -n default
+      - name: Deploy to k3s
+        run: |
+          kubectl set image deployment/portfolio portfolio=ghcr.io/karmcs/mark-self-portfolio:${{ steps.tag.outputs.TAG }} -n default
+          kubectl rollout status deployment/portfolio -n default
