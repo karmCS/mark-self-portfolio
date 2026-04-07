@@ -27,7 +27,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
       <Header />
       <main className="min-h-screen pt-32 pb-20 px-4 sm:px-8 md:px-16">
         <div className="max-w-content mx-auto">
-          <FadeInView>
+          <FadeInView animateOnMount>
             <Link
               href="/projects"
               className="inline-flex items-center gap-2 text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors mb-8"
@@ -37,13 +37,13 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             </Link>
           </FadeInView>
 
-          <FadeInView delay={0.1}>
+          <FadeInView delay={0.05} animateOnMount>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif mb-6">
               {project.title}
             </h1>
           </FadeInView>
 
-          <FadeInView delay={0.2}>
+          <FadeInView delay={0.1} animateOnMount>
             <div className="flex flex-wrap gap-2 mb-8">
               {project.tags.map((tag) => (
                 <span
@@ -56,7 +56,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             </div>
           </FadeInView>
 
-          <FadeInView delay={0.3}>
+          <FadeInView delay={0.15} animateOnMount>
             <div className="flex items-center gap-6 mb-12">
               {project.githubUrl && (
                 <a
@@ -84,7 +84,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           </FadeInView>
 
           {project.thumbnail && (
-            <FadeInView delay={0.4}>
+            <FadeInView delay={0.2} animateOnMount>
               <div className="aspect-video bg-portfolio-bg-secondary rounded-lg overflow-hidden mb-12">
                 <img
                   src={project.thumbnail}
@@ -95,14 +95,14 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             </FadeInView>
           )}
 
-          <FadeInView delay={0.5}>
+          <FadeInView delay={0.25} animateOnMount>
             <div className="prose prose-invert max-w-none project-content">
               <ProjectContent content={project.longDescription} />
             </div>
           </FadeInView>
 
           {project.images && project.images.length > 0 && (
-            <FadeInView delay={0.6}>
+            <FadeInView delay={0.3} animateOnMount>
               <div className="grid md:grid-cols-2 gap-6 mt-12">
                 {project.images.map((image, index) => (
                   <div
