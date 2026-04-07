@@ -53,17 +53,9 @@ export default function About() {
                   Introduction
                 </h2>
                 <p className="text-portfolio-text-secondary leading-relaxed">
-                  I'm a Computer Engineering student passionate about creating
-                  innovative solutions that bridge the gap between hardware and
-                  software. My journey in technology has been driven by
-                  curiosity and a desire to build things that make a difference.
-                </p>
-                <p className="text-portfolio-text-secondary leading-relaxed">
-                  With experience in both embedded systems and web development,
-                  I enjoy tackling complex challenges and learning new
-                  technologies. When I'm not coding, you can find me
-                  experimenting with IoT projects or contributing to open-source
-                  software.
+                  I'm Mark Calip, a third-year Computer Engineering student at California State University, San Bernardino, building practical DevOps skills through hands-on infrastructure projects. 
+                  Rather than just following tutorials, I design and operate production-grade systems—from self-hosted cloud services to AI-powered monitoring pipelines—all running on hardware in my homelab. 
+                  My approach combines systems thinking with modern tools like Docker, Kubernetes, and local LLM inference, all through a generative AI workflow, preparing me for a career in DevOps engineering where infrastructure isn't just managed—it's architected.
                 </p>
               </div>
             </FadeInView>
@@ -114,15 +106,15 @@ export default function About() {
                     Bachelor of Science in Computer Engineering
                   </h3>
                   <p className="text-portfolio-text-secondary">
-                    University Name
+                    California State University San Bernardino
                   </p>
                   <p className="text-portfolio-text-secondary text-sm">
                     Expected Graduation: 2025
                   </p>
                 </div>
                 <p className="text-portfolio-text-secondary leading-relaxed mt-4">
-                  Relevant Coursework: Data Structures, Computer Architecture,
-                  Embedded Systems, Digital Signal Processing, Machine Learning
+                  Relevant Coursework: Computer Architecture,
+                  Embedded Systems, Operating Systems
                 </p>
               </div>
             </div>

@@ -29,7 +29,7 @@ export default function Header() {
       <div className="max-w-content mx-auto px-4 sm:px-8 md:px-16 py-6">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-xl font-serif font-semibold hover:text-portfolio-accent transition-colors">
-            Portfolio
+            Mark Calip
           </Link>
 
           <NavMenu />
