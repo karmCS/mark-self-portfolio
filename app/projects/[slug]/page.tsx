@@ -2,7 +2,9 @@ import { notFound } from 'next/navigation';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import FadeInView from '@/components/animations/FadeInView';
+
 import { getProjectBySlug, getAllProjects } from '@/lib/projects';
+import { ProjectContent } from '@/components/project-content';
 import { Github, ExternalLink, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
@@ -94,10 +96,9 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           )}
 
           <FadeInView delay={0.5}>
-            <div
-              className="prose prose-invert max-w-none project-content"
-              dangerouslySetInnerHTML={{ __html: project.longDescription }}
-            />
+            <div className="prose prose-invert max-w-none project-content">
+              <ProjectContent content={project.longDescription} />
+            </div>
           </FadeInView>
 
           {project.images && project.images.length > 0 && (
