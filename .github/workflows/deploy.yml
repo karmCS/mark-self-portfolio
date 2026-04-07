@@ -3,17 +3,19 @@ name: Build and Deploy
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - 'k8s/deployment.yaml'
   workflow_dispatch:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: karmcs/mark-self-portfolio
 
 jobs:
-  build-and-push:
-    runs-on: ubuntu-latest
+  build-and-deploy:
+    runs-on: self-hosted
     permissions:
-      contents: read
+      contents: write
       packages: write
 
     steps:
@@ -27,19 +29,20 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Extract metadata
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          tags: |
-            type=sha,prefix={{date 'YYYYMMDD-HHmmss'}}-
-            type=raw,value=latest
+      - name: Generate image tag
+        id: tag
+        run: echo "TAG=$(date +%Y%m%d-%H%M%S)-$(echo ${{ github.sha }} | cut -c1-7)" >> $GITHUB_OUTPUT
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: |
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.tag.outputs.TAG }}
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+
+      - name: Deploy to k3s
+        run: |
+          kubectl set image deployment/portfolio portfolio=ghcr.io/karmcs/mark-self-portfolio:${{ steps.tag.outputs.TAG }} -n default
+          kubectl rollout status deployment/portfolio -n default

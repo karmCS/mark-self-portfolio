@@ -2,6 +2,7 @@
 const nextConfig = {
   output: 'standalone',
   eslint: {
+    // Disable ESLint during production builds
     ignoreDuringBuilds: true,
   },
 }
