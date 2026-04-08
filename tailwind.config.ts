@@ -35,12 +35,12 @@ const config: Config = {
       },
       colors: {
         portfolio: {
-          'bg-primary': '#1a1a1a',
-          'bg-secondary': '#2d2d2d',
-          'text-primary': '#f5f5f5',
-          'text-secondary': '#a0a0a0',
-          accent: '#ffffff',
-          border: '#404040',
+          'bg-primary': '#f5f0e8',
+          'bg-secondary': '#ebe4d8',
+          'text-primary': '#1a2332',
+          'text-secondary': '#4a5568',
+          accent: '#1a2332',
+          border: '#d4cabe',
         },
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

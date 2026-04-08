@@ -83,60 +83,69 @@
 
   body {
     @apply bg-portfolio-bg-primary text-portfolio-text-primary;
+    font-family: 'Playfair Display', serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
+    letter-spacing: -0.02em;
   }
 }
 
 .project-content {
-  @apply text-slate-300;
+  @apply text-portfolio-text-secondary;
   font-size: 1.125rem;
-  line-height: 1.75;
+  line-height: 1.8;
 }
 
 .project-content h2 {
-  @apply text-3xl sm:text-4xl font-serif text-slate-100 mt-16 mb-6 font-bold;
-  letter-spacing: -0.02em;
+  @apply text-4xl sm:text-5xl font-serif text-portfolio-text-primary mt-16 mb-8;
+  font-weight: 400;
+  letter-spacing: -0.03em;
 }
 
 .project-content h3 {
-  @apply text-xl sm:text-2xl font-serif text-slate-100 mt-12 mb-5 font-semibold;
-  letter-spacing: -0.01em;
+  @apply text-2xl sm:text-3xl font-serif text-portfolio-text-primary mt-14 mb-6;
+  font-weight: 400;
+  letter-spacing: -0.02em;
 }
 
 .project-content h4 {
-  @apply text-lg font-serif text-slate-200 mt-8 mb-4 font-semibold;
+  @apply text-xl font-serif text-portfolio-text-primary mt-10 mb-4;
+  font-weight: 500;
 }
 
 .project-content p {
-  @apply mb-7 leading-relaxed;
+  @apply mb-8;
+  line-height: 1.8;
   max-width: 680px;
 }
 
 .project-content p strong {
-  @apply text-slate-100 font-semibold;
+  @apply text-portfolio-text-primary;
+  font-weight: 600;
 }
 
 .project-content ul {
-  @apply mb-7 space-y-3;
+  @apply mb-8 space-y-3;
   max-width: 680px;
 }
 
 .project-content li {
-  @apply text-slate-300 pl-6 relative;
+  @apply text-portfolio-text-secondary pl-6 relative;
+  line-height: 1.8;
 }
 
 .project-content li::before {
   content: "•";
-  @apply absolute left-0 text-slate-500;
+  @apply absolute left-0;
+  color: #8b8276;
 }
 
 .project-content img {
-  @apply rounded-lg my-8 w-full;
+  @apply rounded my-10 w-full;
 }
 
 .project-content a {
-  @apply text-portfolio-accent hover:underline;
+  @apply text-portfolio-accent underline decoration-1 underline-offset-2 hover:decoration-2;
 }

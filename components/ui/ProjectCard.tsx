@@ -12,31 +12,30 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <motion.div
-      whileHover={{ scale: 1.02 }}
-      transition={{ duration: 0.2 }}
-      className="bg-portfolio-bg-secondary border border-portfolio-border rounded-lg overflow-hidden group"
+      whileHover={{ y: -4 }}
+      transition={{ duration: 0.3 }}
+      className="bg-white/40 border border-portfolio-border rounded overflow-hidden group"
     >
       <Link href={`/projects/${project.slug}`}>
-        <div className="aspect-video bg-portfolio-bg-primary relative overflow-hidden">
+        <div className="aspect-video bg-portfolio-bg-secondary/40 relative overflow-hidden">
           {project.thumbnail ? (
             <img
               src={project.thumbnail}
               alt={project.title}
-              className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center text-portfolio-text-secondary">
-              <p className="text-sm">Project Image</p>
+              <p className="text-sm font-serif italic">Project Image</p>
             </div>
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-portfolio-bg-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
 
         <div className="p-6">
-          <h3 className="text-xl sm:text-2xl font-serif mb-3 group-hover:text-portfolio-accent transition-colors">
+          <h3 className="text-2xl font-serif mb-3 text-portfolio-text-primary transition-opacity group-hover:opacity-70">
             {project.title}
           </h3>
-          <p className="text-portfolio-text-secondary text-sm mb-4 line-clamp-2">
+          <p className="text-portfolio-text-secondary text-base mb-4 line-clamp-2 leading-relaxed italic">
             {project.description}
           </p>
 
@@ -44,7 +43,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 bg-portfolio-bg-primary border border-portfolio-border text-xs text-portfolio-text-secondary rounded-full"
+                className="px-3 py-1 bg-portfolio-bg-primary/30 border border-portfolio-border text-xs text-portfolio-text-primary font-serif"
               >
                 {tag}
               </span>
@@ -61,7 +60,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 className="hover:text-portfolio-text-primary transition-colors"
                 aria-label="GitHub"
               >
-                <Github className="w-4 h-4" />
+                <Github className="w-5 h-5" />
               </a>
             )}
             {project.liveUrl && (
@@ -73,7 +72,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                 className="hover:text-portfolio-text-primary transition-colors"
                 aria-label="Live Demo"
               >
-                <ExternalLink className="w-4 h-4" />
+                <ExternalLink className="w-5 h-5" />
               </a>
             )}
           </div>

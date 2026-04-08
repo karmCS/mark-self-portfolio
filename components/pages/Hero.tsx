@@ -43,13 +43,13 @@ export default function Hero() {
         >
           <Link
             href="/projects"
-            className="px-8 py-3 bg-portfolio-accent text-portfolio-bg-primary font-medium rounded-sm hover:bg-portfolio-text-primary transition-all duration-200 hover:scale-105"
+            className="px-8 py-3 bg-portfolio-text-primary text-portfolio-bg-primary font-serif rounded hover:opacity-90 transition-all duration-200"
           >
             View Projects
           </Link>
           <Link
             href="/about"
-            className="px-8 py-3 border border-portfolio-border text-portfolio-text-primary font-medium rounded-sm hover:border-portfolio-text-primary transition-all duration-200 hover:scale-105"
+            className="px-8 py-3 border-2 border-portfolio-text-primary text-portfolio-text-primary font-serif rounded hover:bg-portfolio-text-primary hover:text-portfolio-bg-primary transition-all duration-200"
           >
             About Me
           </Link>

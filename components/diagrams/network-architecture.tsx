@@ -10,29 +10,29 @@ interface NetworkNodeProps {
 }
 
 function NetworkNode({ title, description, delay, position }: NetworkNodeProps) {
-  const bgColor = position === 'top' ? 'bg-blue-500/5 border-blue-500/20'
-                : position === 'middle' ? 'bg-slate-500/5 border-slate-500/20'
-                : 'bg-green-500/5 border-green-500/20';
+  const bgColor = position === 'top' ? 'bg-white/50 border-portfolio-text-primary/30'
+                : position === 'middle' ? 'bg-white/40 border-portfolio-border'
+                : 'bg-white/40 border-portfolio-border';
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: position === 'top' ? -15 : position === 'bottom' ? 15 : 0 }}
+      initial={{ opacity: 0, y: position === 'top' ? -10 : position === 'bottom' ? 10 : 0 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.5 }}
-      className={`rounded-md px-4 py-3 border ${bgColor}`}
+      className={`rounded px-4 py-3 border ${bgColor}`}
     >
-      <h4 className="font-medium mb-1 text-sm text-slate-100">{title}</h4>
-      <p className="text-xs text-slate-400 leading-relaxed">{description}</p>
+      <h4 className="font-serif mb-1.5 text-base text-portfolio-text-primary">{title}</h4>
+      <p className="text-sm text-portfolio-text-secondary leading-relaxed italic">{description}</p>
     </motion.div>
   );
 }
 
 export function NetworkArchitecture() {
   return (
-    <div className="w-full max-w-xl mx-auto my-10 p-5 bg-slate-900/20 rounded-lg border border-slate-800/50">
-      <h3 className="text-base font-serif mb-5 text-center text-slate-200 font-semibold">Network Flow</h3>
+    <div className="w-full max-w-3xl mx-auto my-16 p-8 bg-portfolio-bg-secondary/60 rounded border border-portfolio-border">
+      <h3 className="text-2xl font-serif mb-8 text-center text-portfolio-text-primary">Network Flow</h3>
 
-      <div className="mb-3">
+      <div className="mb-4">
         <NetworkNode
           title="Public Internet"
           description="User requests markcalip.com"
@@ -41,43 +41,43 @@ export function NetworkArchitecture() {
         />
       </div>
 
-      <div className="mb-3">
+      <div className="mb-4">
         <NetworkNode
           title="Cloudflare Tunnel"
           description="SSL termination, DDoS protection, CDN caching"
-          delay={0.3}
+          delay={0.2}
           position="middle"
         />
       </div>
 
-      <div className="mb-4">
+      <div className="mb-6">
         <NetworkNode
           title="Caddy Reverse Proxy (VM 1)"
           description="Routes traffic to *.friday.local domains"
-          delay={0.6}
+          delay={0.4}
           position="middle"
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <NetworkNode
           title="k3s Cluster (VM 3)"
           description="Portfolio website on NodePort 30080"
-          delay={0.9}
+          delay={0.6}
           position="bottom"
         />
 
         <NetworkNode
           title="Docker Services (VM 1)"
           description="Immich, Vaultwarden, Nextcloud, etc."
-          delay={1.1}
+          delay={0.8}
           position="bottom"
         />
 
         <NetworkNode
           title="Ollama (VM 2)"
           description="AI inference for alert interpretation"
-          delay={1.3}
+          delay={1}
           position="bottom"
         />
       </div>

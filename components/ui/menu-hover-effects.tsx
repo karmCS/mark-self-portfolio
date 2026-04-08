@@ -46,27 +46,20 @@ export default function NavMenu() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span className="
-                  relative z-10 block uppercase text-portfolio-text-primary
-                  font-sans font-semibold transition-colors duration-300
-                  group-hover:text-portfolio-bg-primary
+                  relative z-10 block text-portfolio-text-primary
+                  font-serif transition-all duration-300
+                  group-hover:text-portfolio-text-primary
                   text-xl py-2 px-3
-                  md:text-sm md:py-2 md:px-3
-                  lg:text-sm lg:py-2 lg:px-4
-                  tracking-wide
+                  md:text-base md:py-2 md:px-3
+                  lg:text-base lg:py-2 lg:px-4
                 ">
                   {item.name}
                 </span>
                 <span className="
-                  absolute inset-0 border-t-2 border-b-2 border-portfolio-text-primary
-                  transform scale-y-[2] opacity-0
-                  transition-all duration-300 origin-center
-                  group-hover:scale-y-100 group-hover:opacity-100
-                " />
-                <span className="
-                  absolute top-[2px] left-0 w-full h-full bg-portfolio-accent
-                  transform scale-0 opacity-0
-                  transition-all duration-300 origin-top
-                  group-hover:scale-100 group-hover:opacity-100
+                  absolute bottom-0 left-0 w-full h-0.5 bg-portfolio-text-primary
+                  transform scale-x-0 opacity-0
+                  transition-all duration-300 origin-left
+                  group-hover:scale-x-100 group-hover:opacity-100
                 " />
               </Link>
             </li>
