@@ -43,6 +43,13 @@ jobs:
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
 
       - name: Deploy to k3s
-        run: |
-          kubectl set image deployment/portfolio portfolio=ghcr.io/karmcs/mark-self-portfolio:${{ steps.tag.outputs.TAG }} -n default
-          kubectl rollout status deployment/portfolio -n default
+      env:
+        KUBE_TOKEN: ${{ secrets.KUBE_TOKEN }}
+        KUBE_SERVER: ${{ secrets.KUBE_SERVER }}
+      run: |
+        kubectl config set-cluster k3s --server="${KUBE_SERVER}" --insecure-skip-tls-verify=true
+        kubectl config set-credentials github-actions --token="${KUBE_TOKEN}"
+        kubectl config set-context k3s --cluster=k3s --user=github-actions --namespace=default
+        kubectl config use-context k3s
+    
+        kubectl set image deployment/portfolio portfolio=ghcr.io/karmcs/mark-self-portfolio:$TAG -n default
