@@ -37,7 +37,7 @@ export default function Home() {
 
             <div className="grid md:grid-cols-2 gap-16 mb-24 items-center">
               <FadeInView>
-                <div className="aspect-square bg-portfolio-bg-secondary rounded-lg overflow-hidden">
+                <div className="aspect-[4/5] bg-portfolio-bg-secondary rounded-lg overflow-hidden">
                   <img
                   src="/images/cleanedheadshot.png"
                   alt="Mark Calip"
