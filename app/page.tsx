@@ -39,7 +39,7 @@ export default function Home() {
               <FadeInView>
                 <div className="aspect-[4/5] bg-portfolio-bg-secondary rounded-lg overflow-hidden">
                   <img
-                  src="/images/cleanedheadshot.png"
+                  src="/images/projects/cleanedheadshot.png"
                   alt="Mark Calip"
                   className="w-full h-full object-cover"
                   />
