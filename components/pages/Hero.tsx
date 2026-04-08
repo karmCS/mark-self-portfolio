@@ -3,16 +3,20 @@
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
+import { Meteors } from '@/components/ui/meteors';
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center relative px-6 sm:px-8 md:px-16 py-20 sm:py-0">
-      <div className="max-w-4xl mx-auto text-center">
+    <section className="min-h-screen flex items-center justify-center relative px-6 sm:px-8 md:px-16 py-20 sm:py-0 overflow-hidden">
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <Meteors number={80} />
+      </div>
+      <div className="max-w-3xl mx-auto text-center relative z-10">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-sans font-bold mb-8 sm:mb-6 tracking-tight leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-bold mb-6 sm:mb-5 tracking-tight leading-tight"
         >
           Mark Calip
         </motion.h1>
@@ -21,7 +25,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
-        className="text-lg sm:text-2xl md:text-3xl text-portfolio-text-secondary mb-6 sm:mb-4 font-sans"
+        className="text-base sm:text-xl md:text-2xl text-portfolio-text-secondary mb-5 sm:mb-4 font-sans"
         >
           Computer Engineering Student
         </motion.p>
@@ -30,7 +34,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.7 }}
-          className="text-base sm:text-lg text-portfolio-text-secondary max-w-2xl mx-auto mb-12 leading-relaxed px-2"
+          className="text-sm sm:text-base text-portfolio-text-secondary max-w-xl mx-auto mb-10 leading-relaxed px-2"
         >
           Infrastructure built the modern way. Human architecture, AI execution.
         </motion.p>

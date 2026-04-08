@@ -4,6 +4,7 @@ import FadeInView from '@/components/animations/FadeInView';
 
 import { getProjectBySlug, getAllProjects } from '@/lib/projects';
 import { ProjectContent } from '@/components/project-content';
+import { Meteors } from '@/components/ui/meteors';
 import { Github, ExternalLink, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
@@ -23,16 +24,30 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <main className="min-h-screen pt-16 pb-20 px-4 sm:px-8 md:px-16">
+      <main className="min-h-screen pt-24 sm:pt-16 pb-20 px-4 sm:px-8 md:px-16">
         <div className="max-w-content mx-auto">
+          <div className="relative overflow-hidden rounded-xl mb-12 -mx-4 sm:-mx-8 md:-mx-16 px-4 sm:px-8 md:px-16 pt-8 pb-2 bg-gradient-to-b from-portfolio-bg-secondary to-transparent">
+            <div className="absolute inset-0 z-0 pointer-events-none">
+              <Meteors number={10} className="bg-slate-400 opacity-25" />
+            </div>
+            <div className="relative z-10">
           <FadeInView animateOnMount>
-            <Link
-              href="/projects"
-              className="inline-flex items-center gap-2 text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors mb-8"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Back to Projects
-            </Link>
+            <div className="flex items-center gap-4 mb-8 sm:mb-10">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors group"
+              >
+                <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+                <span className="font-serif text-sm sm:text-base">Home</span>
+              </Link>
+              <span className="text-portfolio-text-secondary/40">/</span>
+              <Link
+                href="/projects"
+                className="inline-flex items-center gap-2 text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors font-serif text-sm sm:text-base"
+              >
+                Projects
+              </Link>
+            </div>
           </FadeInView>
 
           <FadeInView delay={0.05} animateOnMount>
@@ -80,6 +95,8 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               )}
             </div>
           </FadeInView>
+            </div>
+          </div>
 
           {project.thumbnail && (
             <FadeInView delay={0.2} animateOnMount>
