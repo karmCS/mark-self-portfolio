@@ -81,10 +81,9 @@
     scroll-behavior: smooth;
   }
 
-  body {
-    @apply bg-portfolio-bg-primary text-portfolio-text-primary;
-    font-family: 'Playfair Display', serif;
-  }
+body {
+  @apply bg-portfolio-bg-primary text-portfolio-text-primary;
+}
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif;
@@ -118,7 +117,6 @@
 .project-content p {
   @apply mb-8;
   line-height: 1.8;
-  max-width: 680px;
 }
 
 .project-content p strong {
@@ -128,7 +126,6 @@
 
 .project-content ul {
   @apply mb-8 space-y-3;
-  max-width: 680px;
 }
 
 .project-content li {

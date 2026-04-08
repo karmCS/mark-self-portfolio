@@ -28,7 +28,7 @@ export default function Header() {
     >
       <div className="max-w-content mx-auto px-4 sm:px-8 md:px-16 py-6">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-xl font-serif hover:opacity-70 transition-opacity">
+          <Link href="/" className="text-2xl md:text-3xl font-serif font-medium hover:opacity-70 transition-opacity">
             Mark Calip
           </Link>
 
