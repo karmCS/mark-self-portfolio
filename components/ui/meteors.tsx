@@ -31,7 +31,7 @@ export const Meteors = ({ number, className }: MeteorProps) => {
           key={"meteor" + idx}
           className={cn(
             "pointer-events-none absolute h-px w-[150px] rotate-[215deg] animate-meteor-effect",
-            "bg-gradient-to-r from-slate-400 via-slate-300 to-transparent opacity-0",
+            "bg-gradient-to-l from-slate-400 via-slate-300 to-transparent opacity-0",
             className
           )}
           style={{
@@ -41,7 +41,7 @@ export const Meteors = ({ number, className }: MeteorProps) => {
             animationDuration: style.animationDuration,
           }}
         >
-          <span className="absolute right-0 top-1/2 -translate-y-1/2 h-[3px] w-[3px] rounded-full bg-slate-300 shadow-[0_0_4px_2px_rgba(148,163,184,0.4)]" />
+          <span className="absolute left-0 top-1/2 -translate-y-1/2 h-[3px] w-[3px] rounded-full bg-slate-300 shadow-[0_0_4px_2px_rgba(148,163,184,0.4)]" />
         </span>
       ))}
     </>
