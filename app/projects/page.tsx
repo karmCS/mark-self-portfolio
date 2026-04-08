@@ -1,6 +1,7 @@
 import Footer from '@/components/layout/Footer';
 import FadeInView from '@/components/animations/FadeInView';
 import ProjectCard from '@/components/ui/ProjectCard';
+import { Meteors } from '@/components/ui/meteors';
 import { getAllProjects } from '@/lib/projects';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
@@ -10,8 +11,11 @@ export default function Projects() {
 
   return (
     <>
-      <main className="min-h-screen pt-24 sm:pt-16 pb-20 px-4 sm:px-8 md:px-16">
-        <div className="max-w-content mx-auto">
+      <main className="min-h-screen pt-24 sm:pt-16 pb-20 px-4 sm:px-8 md:px-16 relative overflow-hidden">
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <Meteors number={80} className="bg-slate-400 opacity-30" />
+        </div>
+        <div className="max-w-content mx-auto relative z-10">
           <FadeInView>
             <Link
               href="/"
