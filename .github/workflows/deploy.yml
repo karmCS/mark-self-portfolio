@@ -47,9 +47,26 @@ jobs:
           KUBE_TOKEN: ${{ secrets.KUBE_TOKEN }}
           KUBE_SERVER: ${{ secrets.KUBE_SERVER }}
         run: |
-          kubectl config set-cluster k3s --server="${KUBE_SERVER}" --insecure-skip-tls-verify=true
-          kubectl config set-credentials github-actions --token="${KUBE_TOKEN}"
-          kubectl config set-context k3s --cluster=k3s --user=github-actions --namespace=default
+          # Create a temporary kubeconfig
+          mkdir -p ~/.kube
+          export KUBECONFIG=~/.kube/config
+          
+          # Configure kubectl to use our service account
+          kubectl config set-cluster k3s \
+            --server="${KUBE_SERVER}" \
+            --insecure-skip-tls-verify=true
+          
+          kubectl config set-credentials github-actions \
+            --token="${KUBE_TOKEN}"
+          
+          kubectl config set-context k3s \
+            --cluster=k3s \
+            --user=github-actions \
+            --namespace=default
+          
           kubectl config use-context k3s
           
-          kubectl set image deployment/portfolio portfolio=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.tag.outputs.TAG }} -n default
+          # Update the deployment with new image
+          kubectl set image deployment/portfolio \
+            portfolio=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.tag.outputs.TAG }} \
+            -n default
