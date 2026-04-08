@@ -79,30 +79,39 @@ body {
 }
 
 .project-content {
-  @apply text-portfolio-text-secondary;
-  font-size: 1.125rem;
+  @apply text-portfolio-text-secondary px-4 sm:px-0;
+  font-size: 1rem;
   line-height: 1.8;
 }
 
+@media (min-width: 640px) {
+  .project-content {
+    font-size: 1.125rem;
+  }
+}
+
 .project-content h2 {
-  @apply text-4xl sm:text-5xl font-sans text-portfolio-text-primary mt-16 mb-8;
+  @apply text-3xl sm:text-4xl md:text-5xl font-sans text-portfolio-text-primary mt-12 sm:mt-16 mb-6 sm:mb-8;
   font-weight: 400;
   letter-spacing: -0.03em;
+  line-height: 1.2;
 }
 
 .project-content h3 {
-  @apply text-2xl sm:text-3xl font-sans text-portfolio-text-primary mt-14 mb-6;
+  @apply text-xl sm:text-2xl md:text-3xl font-sans text-portfolio-text-primary mt-10 sm:mt-14 mb-5 sm:mb-6;
   font-weight: 400;
   letter-spacing: -0.02em;
+  line-height: 1.3;
 }
 
 .project-content h4 {
-  @apply text-xl font-sans text-portfolio-text-primary mt-10 mb-4;
+  @apply text-lg sm:text-xl font-sans text-portfolio-text-primary mt-8 sm:mt-10 mb-4;
   font-weight: 500;
+  line-height: 1.4;
 }
 
 .project-content p {
-  @apply mb-8;
+  @apply mb-6 sm:mb-8;
   line-height: 1.8;
 }
 
@@ -112,7 +121,7 @@ body {
 }
 
 .project-content ul {
-  @apply mb-8 space-y-3;
+  @apply mb-6 sm:mb-8 space-y-2 sm:space-y-3;
 }
 
 .project-content li {
@@ -127,7 +136,7 @@ body {
 }
 
 .project-content img {
-  @apply rounded my-10 w-full;
+  @apply rounded my-8 sm:my-10 w-full;
 }
 
 .project-content a {

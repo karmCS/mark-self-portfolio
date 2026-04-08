@@ -29,10 +29,10 @@ function NetworkNode({ title, description, delay, position }: NetworkNodeProps) 
 
 export function NetworkArchitecture() {
   return (
-    <div className="w-full max-w-3xl mx-auto my-16 p-8 bg-portfolio-bg-secondary/60 rounded border border-portfolio-border">
-      <h3 className="text-2xl font-sans mb-8 text-center text-portfolio-text-primary">Network Flow</h3>
+    <div className="w-full max-w-3xl mx-auto my-10 sm:my-16 p-5 sm:p-8 bg-portfolio-bg-secondary/60 rounded border border-portfolio-border">
+      <h3 className="text-xl sm:text-2xl font-sans mb-6 sm:mb-8 text-center text-portfolio-text-primary">Network Flow</h3>
 
-      <div className="mb-4">
+      <div className="mb-3 sm:mb-4">
         <NetworkNode
           title="Public Internet"
           description="User requests markcalip.com"
@@ -41,7 +41,7 @@ export function NetworkArchitecture() {
         />
       </div>
 
-      <div className="mb-4">
+      <div className="mb-3 sm:mb-4">
         <NetworkNode
           title="Cloudflare Tunnel"
           description="SSL termination, DDoS protection, CDN caching"
@@ -50,7 +50,7 @@ export function NetworkArchitecture() {
         />
       </div>
 
-      <div className="mb-6">
+      <div className="mb-4 sm:mb-6">
         <NetworkNode
           title="Caddy Reverse Proxy (VM 1)"
           description="Routes traffic to *.friday.local domains"
@@ -59,7 +59,7 @@ export function NetworkArchitecture() {
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
         <NetworkNode
           title="k3s Cluster (VM 3)"
           description="Portfolio website on NodePort 30080"

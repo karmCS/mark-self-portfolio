@@ -6,13 +6,13 @@ import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center relative px-4 sm:px-8 md:px-16">
+    <section className="min-h-screen flex items-center justify-center relative px-6 sm:px-8 md:px-16 py-20 sm:py-0">
       <div className="max-w-4xl mx-auto text-center">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans font-bold mb-6 tracking-tight"
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-sans font-bold mb-8 sm:mb-6 tracking-tight leading-tight"
         >
           Mark Calip
         </motion.h1>
@@ -21,7 +21,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
-        className="text-xl sm:text-2xl md:text-3xl text-portfolio-text-secondary mb-4 font-sans"
+        className="text-lg sm:text-2xl md:text-3xl text-portfolio-text-secondary mb-6 sm:mb-4 font-sans"
         >
           Computer Engineering Student
         </motion.p>
@@ -30,7 +30,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.7 }}
-          className="text-base sm:text-lg text-portfolio-text-secondary max-w-2xl mx-auto mb-12 leading-relaxed"
+          className="text-base sm:text-lg text-portfolio-text-secondary max-w-2xl mx-auto mb-12 leading-relaxed px-2"
         >
           A motivated computer engineering student working to expand my skills in DevOps, system administration, and generative AI workflows
         </motion.p>
@@ -39,11 +39,11 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.9 }}
-          className="flex items-center justify-center gap-6"
+          className="flex items-center justify-center gap-4 sm:gap-6"
         >
           <Link
             href="/projects"
-            className="px-8 py-3 bg-portfolio-accent text-white font-medium rounded hover:opacity-90 transition-all duration-200"
+            className="px-6 sm:px-8 py-3 bg-portfolio-accent text-white font-medium rounded hover:opacity-90 transition-all duration-200 text-sm sm:text-base"
           >
             View Projects
           </Link>
