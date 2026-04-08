@@ -114,9 +114,8 @@ export const projects: Project[] = [
     <p>The most important lesson: infrastructure is built in layers. Rather than duct-taping tools together, successful orchestration requires organized, purposeful architecture where each component fits deliberately into place.</p>
   `,
   tags: ['Docker', 'Linux'],
-  //thumbnail: '/images/projects/your-project.png',
-  thumbnail: '',
-  githubUrl: 'https://github.com/karmCS/mark-friday-homelab',
+  thumbnail: '/images/projects/friday-homelab-pic.png',
+  githubUrl: 'https://github.com/karmCS/friday-homelab',
   date: '2026-04-07',
 },
 ];

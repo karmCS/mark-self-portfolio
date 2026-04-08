@@ -18,7 +18,7 @@ function AlertStage({ title, description, delay, icon }: StageProps) {
       className="bg-white/40 border border-portfolio-border rounded p-4"
     >
       {icon && <div className="text-2xl mb-2">{icon}</div>}
-      <h4 className="text-base font-serif mb-2 text-portfolio-text-primary">{title}</h4>
+      <h4 className="text-base font-sans mb-2 text-portfolio-text-primary">{title}</h4>
       <p className="text-sm text-portfolio-text-secondary leading-relaxed italic">{description}</p>
     </motion.div>
   );
@@ -27,7 +27,7 @@ function AlertStage({ title, description, delay, icon }: StageProps) {
 export function AlertPipeline() {
   return (
     <div className="w-full max-w-3xl mx-auto my-16 p-8 bg-portfolio-bg-secondary/60 rounded border border-portfolio-border">
-      <h3 className="text-2xl font-serif mb-8 text-center text-portfolio-text-primary">AI-Powered Alert System</h3>
+      <h3 className="text-2xl font-sans mb-8 text-center text-portfolio-text-primary">AI-Powered Alert System</h3>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         <AlertStage

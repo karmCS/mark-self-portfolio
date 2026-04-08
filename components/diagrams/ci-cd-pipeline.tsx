@@ -23,7 +23,7 @@ function PipelineStage({ title, description, delay, highlight }: StageProps) {
         }
       `}
     >
-      <h4 className="text-base font-serif mb-1.5 text-portfolio-text-primary">{title}</h4>
+      <h4 className="text-base font-sans mb-1.5 text-portfolio-text-primary">{title}</h4>
       <p className="text-sm text-portfolio-text-secondary leading-relaxed italic">{description}</p>
     </motion.div>
   );
@@ -48,7 +48,7 @@ function AnimatedArrow({ delay }: { delay: number }) {
 export function CICDPipeline() {
   return (
     <div className="w-full max-w-2xl mx-auto my-16 p-8 bg-portfolio-bg-secondary/60 rounded border border-portfolio-border">
-      <h3 className="text-2xl font-serif mb-8 text-center text-portfolio-text-primary">CI/CD Pipeline</h3>
+      <h3 className="text-2xl font-sans mb-8 text-center text-portfolio-text-primary">CI/CD Pipeline</h3>
 
       <PipelineStage
         title="Developer Push"

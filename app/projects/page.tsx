@@ -1,4 +1,3 @@
-import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import FadeInView from '@/components/animations/FadeInView';
 import ProjectCard from '@/components/ui/ProjectCard';
@@ -9,11 +8,10 @@ export default function Projects() {
 
   return (
     <>
-      <Header />
-      <main className="min-h-screen pt-32 pb-20 px-4 sm:px-8 md:px-16">
+      <main className="min-h-screen pt-16 pb-20 px-4 sm:px-8 md:px-16">
         <div className="max-w-content mx-auto">
           <FadeInView>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-sans mb-6">
               Projects
             </h1>
             <p className="text-portfolio-text-secondary text-lg mb-16 max-w-2xl">

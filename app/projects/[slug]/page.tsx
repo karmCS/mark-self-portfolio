@@ -1,5 +1,4 @@
 import { notFound } from 'next/navigation';
-import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import FadeInView from '@/components/animations/FadeInView';
 
@@ -24,8 +23,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <Header />
-      <main className="min-h-screen pt-32 pb-20 px-4 sm:px-8 md:px-16">
+      <main className="min-h-screen pt-16 pb-20 px-4 sm:px-8 md:px-16">
         <div className="max-w-content mx-auto">
           <FadeInView animateOnMount>
             <Link
@@ -38,7 +36,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           </FadeInView>
 
           <FadeInView delay={0.05} animateOnMount>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-sans mb-6">
               {project.title}
             </h1>
           </FadeInView>
@@ -63,7 +61,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-portfolio-accent text-portfolio-bg-primary font-medium rounded-sm hover:bg-portfolio-text-primary transition-all duration-200"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-portfolio-accent text-white font-medium rounded hover:opacity-90 transition-all duration-200"
                 >
                   <Github className="w-4 h-4" />
                   View on GitHub
@@ -74,7 +72,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 border border-portfolio-border text-portfolio-text-primary font-medium rounded-sm hover:border-portfolio-text-primary transition-all duration-200"
+                  className="inline-flex items-center gap-2 px-6 py-3 border border-portfolio-border text-portfolio-text-primary font-medium rounded hover:border-portfolio-accent hover:text-portfolio-accent transition-all duration-200"
                 >
                   <ExternalLink className="w-4 h-4" />
                   Live Demo

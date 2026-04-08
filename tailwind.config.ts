@@ -10,7 +10,6 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['var(--font-playfair)', 'Playfair Display', 'serif'],
         sans: ['var(--font-inter)', 'Inter', 'sans-serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
@@ -35,12 +34,12 @@ const config: Config = {
       },
       colors: {
         portfolio: {
-          'bg-primary': '#f5f0e8',
-          'bg-secondary': '#ebe4d8',
-          'text-primary': '#1a2332',
-          'text-secondary': '#4a5568',
-          accent: '#1a2332',
-          border: '#d4cabe',
+          'bg-primary': '#FAFAFA',
+          'bg-secondary': '#F5F5F5',
+          'text-primary': '#171717',
+          'text-secondary': '#525252',
+          accent: '#2563EB',
+          border: '#E5E5E5',
         },
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

@@ -12,18 +12,18 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-normal mb-6"
+          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans font-bold mb-6 tracking-tight"
         >
           Mark Calip
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-xl sm:text-2xl md:text-3xl text-portfolio-text-secondary mb-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        className="text-xl sm:text-2xl md:text-3xl text-portfolio-text-secondary mb-4 font-sans"
         >
-          <span className="italic">Computer Engineering</span> Student
+          Computer Engineering Student
         </motion.p>
 
         <motion.p
@@ -43,15 +43,9 @@ export default function Hero() {
         >
           <Link
             href="/projects"
-            className="px-8 py-3 bg-portfolio-text-primary text-portfolio-bg-primary font-serif rounded hover:opacity-90 transition-all duration-200"
+            className="px-8 py-3 bg-portfolio-accent text-white font-medium rounded hover:opacity-90 transition-all duration-200"
           >
             View Projects
-          </Link>
-          <Link
-            href="/about"
-            className="px-8 py-3 border-2 border-portfolio-text-primary text-portfolio-text-primary font-serif rounded hover:bg-portfolio-text-primary hover:text-portfolio-bg-primary transition-all duration-200"
-          >
-            About Me
           </Link>
         </motion.div>
       </div>
@@ -62,13 +56,15 @@ export default function Hero() {
         transition={{ delay: 1.5, duration: 0.5 }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-          className="text-portfolio-text-secondary"
-        >
-          <ChevronDown className="w-6 h-6" />
-        </motion.div>
+        <a href="#about" aria-label="Scroll to about section">
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+            className="text-portfolio-text-secondary hover:text-portfolio-accent transition-colors"
+          >
+            <ChevronDown className="w-6 h-6" />
+          </motion.div>
+        </a>
       </motion.div>
     </section>
   );

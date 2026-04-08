@@ -26,13 +26,13 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center text-portfolio-text-secondary">
-              <p className="text-sm font-serif italic">Project Image</p>
+              <p className="text-sm font-sans italic">Project Image</p>
             </div>
           )}
         </div>
 
         <div className="p-6">
-          <h3 className="text-2xl font-serif mb-3 text-portfolio-text-primary transition-opacity group-hover:opacity-70">
+          <h3 className="text-2xl font-sans mb-3 text-portfolio-text-primary transition-opacity group-hover:opacity-70">
             {project.title}
           </h3>
           <p className="text-portfolio-text-secondary text-base mb-4 line-clamp-2 leading-relaxed italic">
@@ -43,7 +43,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 bg-portfolio-bg-primary/30 border border-portfolio-border text-xs text-portfolio-text-primary font-serif"
+                className="px-3 py-1 bg-portfolio-bg-primary/30 border border-portfolio-border text-xs text-portfolio-text-primary font-sans"
               >
                 {tag}
               </span>

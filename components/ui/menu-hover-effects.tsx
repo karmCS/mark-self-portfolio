@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const menuItems = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
+  { name: 'About', href: '/#about' },
   { name: 'Projects', href: '/projects' },
 ];
 
@@ -46,9 +46,9 @@ export default function NavMenu() {
                 onClick={() => setIsMenuOpen(false)}
               >
                 <span className="
-                  relative z-10 block text-portfolio-text-primary
-                  font-serif transition-all duration-300
-                  group-hover:text-portfolio-text-primary
+                  relative z-10 block text-portfolio-text-secondary
+                  font-sans transition-all duration-300
+                  group-hover:text-portfolio-accent
                   text-xl py-2 px-3
                   md:text-base md:py-2 md:px-3
                   lg:text-base lg:py-2 lg:px-4
@@ -56,7 +56,7 @@ export default function NavMenu() {
                   {item.name}
                 </span>
                 <span className="
-                  absolute bottom-0 left-0 w-full h-0.5 bg-portfolio-text-primary
+                  absolute bottom-0 left-0 w-full h-0.5 bg-portfolio-accent
                   transform scale-x-0 opacity-0
                   transition-all duration-300 origin-left
                   group-hover:scale-x-100 group-hover:opacity-100

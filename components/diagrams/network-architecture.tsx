@@ -21,7 +21,7 @@ function NetworkNode({ title, description, delay, position }: NetworkNodeProps) 
       transition={{ delay, duration: 0.5 }}
       className={`rounded px-4 py-3 border ${bgColor}`}
     >
-      <h4 className="font-serif mb-1.5 text-base text-portfolio-text-primary">{title}</h4>
+      <h4 className="font-sans mb-1.5 text-base text-portfolio-text-primary">{title}</h4>
       <p className="text-sm text-portfolio-text-secondary leading-relaxed italic">{description}</p>
     </motion.div>
   );
@@ -30,7 +30,7 @@ function NetworkNode({ title, description, delay, position }: NetworkNodeProps) 
 export function NetworkArchitecture() {
   return (
     <div className="w-full max-w-3xl mx-auto my-16 p-8 bg-portfolio-bg-secondary/60 rounded border border-portfolio-border">
-      <h3 className="text-2xl font-serif mb-8 text-center text-portfolio-text-primary">Network Flow</h3>
+      <h3 className="text-2xl font-sans mb-8 text-center text-portfolio-text-primary">Network Flow</h3>
 
       <div className="mb-4">
         <NetworkNode
