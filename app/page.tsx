@@ -38,9 +38,11 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-16 mb-24 items-center">
               <FadeInView>
                 <div className="aspect-square bg-portfolio-bg-secondary rounded-lg overflow-hidden">
-                  <div className="w-full h-full flex items-center justify-center text-portfolio-text-secondary">
-                    <p className="text-sm">Your Photo Here</p>
-                  </div>
+                  <img
+                  src="/images/cleanedheadshot.png"
+                  alt="Mark Calip"
+                  className="w-full h-full object-cover"
+                  />
                 </div>
               </FadeInView>
 
