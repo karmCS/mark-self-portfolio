@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center relative px-6 sm:px-8 md:px-16 py-20 sm:py-0 overflow-hidden">
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <Meteors number={80} className="bg-slate-400 opacity-30" />
+        <Meteors number={80} />
       </div>
       <div className="max-w-3xl mx-auto text-center relative z-10">
         <motion.h1

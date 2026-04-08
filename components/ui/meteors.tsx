@@ -1,31 +1,48 @@
-import { cn } from "@/lib/utils";
-import React from "react";
+"use client";
 
-export const Meteors = ({
-  number,
-  className,
-}: {
+import { cn } from "@/lib/utils";
+import React, { useEffect, useState } from "react";
+
+interface MeteorProps {
   number?: number;
   className?: string;
-}) => {
-  const meteors = new Array(number || 20).fill(true);
+}
+
+export const Meteors = ({ number, className }: MeteorProps) => {
+  const [meteorStyles, setMeteorStyles] = useState<
+    { top: string; left: string; animationDelay: string; animationDuration: string }[]
+  >([]);
+
+  useEffect(() => {
+    const count = number || 20;
+    const styles = Array.from({ length: count }, () => ({
+      top: Math.floor(Math.random() * 100) + "%",
+      left: Math.floor(Math.random() * 100) + "%",
+      animationDelay: (Math.random() * 8) + "s",
+      animationDuration: Math.floor(Math.random() * 8 + 4) + "s",
+    }));
+    setMeteorStyles(styles);
+  }, [number]);
+
   return (
     <>
-      {meteors.map((el, idx) => (
+      {meteorStyles.map((style, idx) => (
         <span
           key={"meteor" + idx}
           className={cn(
-            "animate-meteor-effect absolute top-1/2 left-1/2 h-0.5 w-0.5 rounded-[9999px] bg-slate-500 shadow-[0_0_0_1px_#ffffff10] rotate-[215deg]",
-            "before:content-[''] before:absolute before:top-1/2 before:transform before:-translate-y-[50%] before:w-[50px] before:h-[1px] before:bg-gradient-to-r before:from-[#64748b] before:to-transparent",
+            "pointer-events-none absolute h-px w-[150px] rotate-[215deg] animate-meteor-effect",
+            "bg-gradient-to-r from-slate-400 via-slate-300 to-transparent opacity-0",
             className
           )}
           style={{
-            top: 0,
-            left: Math.floor(Math.random() * (400 - -400) + -400) + "px",
-            animationDelay: Math.random() * (0.8 - 0.2) + 0.2 + "s",
-            animationDuration: Math.floor(Math.random() * (10 - 2) + 2) + "s",
+            top: style.top,
+            left: style.left,
+            animationDelay: style.animationDelay,
+            animationDuration: style.animationDuration,
           }}
-        ></span>
+        >
+          <span className="absolute right-0 top-1/2 -translate-y-1/2 h-[3px] w-[3px] rounded-full bg-slate-300 shadow-[0_0_4px_2px_rgba(148,163,184,0.4)]" />
+        </span>
       ))}
     </>
   );
