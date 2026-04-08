@@ -35,11 +35,11 @@ function AnimatedArrow({ delay }: { delay: number }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay, duration: 0.3 }}
-      className="flex justify-center my-3"
+      className="flex justify-center my-2 sm:my-3"
     >
-      <svg width="16" height="24" viewBox="0 0 16 24" className="text-portfolio-text-secondary/40">
-        <line x1="8" y1="0" x2="8" y2="18" stroke="currentColor" strokeWidth="1.5" />
-        <polygon points="8,24 4,18 12,18" fill="currentColor" />
+      <svg width="16" height="20" viewBox="0 0 16 20" className="text-portfolio-text-secondary/40">
+        <line x1="8" y1="0" x2="8" y2="14" stroke="currentColor" strokeWidth="1.5" />
+        <polygon points="8,20 4,14 12,14" fill="currentColor" />
       </svg>
     </motion.div>
   );
@@ -47,8 +47,8 @@ function AnimatedArrow({ delay }: { delay: number }) {
 
 export function CICDPipeline() {
   return (
-    <div className="w-full max-w-2xl mx-auto my-16 p-8 bg-portfolio-bg-secondary/60 rounded border border-portfolio-border">
-      <h3 className="text-2xl font-sans mb-8 text-center text-portfolio-text-primary">CI/CD Pipeline</h3>
+    <div className="w-full max-w-2xl mx-auto my-10 sm:my-16 p-5 sm:p-8 bg-portfolio-bg-secondary/60 rounded border border-portfolio-border">
+      <h3 className="text-xl sm:text-2xl font-sans mb-6 sm:mb-8 text-center text-portfolio-text-primary">CI/CD Pipeline</h3>
 
       <PipelineStage
         title="Developer Push"

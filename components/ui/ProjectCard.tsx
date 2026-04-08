@@ -31,11 +31,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           )}
         </div>
 
-        <div className="p-6">
-          <h3 className="text-2xl font-sans mb-3 text-portfolio-text-primary transition-opacity group-hover:opacity-70">
+        <div className="p-5 sm:p-6">
+          <h3 className="text-xl sm:text-2xl font-sans mb-3 text-portfolio-text-primary transition-opacity group-hover:opacity-70 leading-tight">
             {project.title}
           </h3>
-          <p className="text-portfolio-text-secondary text-base mb-4 line-clamp-2 leading-relaxed italic">
+          <p className="text-portfolio-text-secondary text-sm sm:text-base mb-4 line-clamp-3 sm:line-clamp-2 leading-relaxed italic">
             {project.description}
           </p>
 
@@ -43,7 +43,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1 bg-portfolio-bg-primary/30 border border-portfolio-border text-xs text-portfolio-text-primary font-sans"
+                className="px-2.5 sm:px-3 py-1 bg-portfolio-bg-primary/30 border border-portfolio-border text-xs text-portfolio-text-primary font-sans"
               >
                 {tag}
               </span>

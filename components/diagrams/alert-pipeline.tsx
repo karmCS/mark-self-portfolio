@@ -26,10 +26,10 @@ function AlertStage({ title, description, delay, icon }: StageProps) {
 
 export function AlertPipeline() {
   return (
-    <div className="w-full max-w-3xl mx-auto my-16 p-8 bg-portfolio-bg-secondary/60 rounded border border-portfolio-border">
-      <h3 className="text-2xl font-sans mb-8 text-center text-portfolio-text-primary">AI-Powered Alert System</h3>
+    <div className="w-full max-w-3xl mx-auto my-10 sm:my-16 p-5 sm:p-8 bg-portfolio-bg-secondary/60 rounded border border-portfolio-border">
+      <h3 className="text-xl sm:text-2xl font-sans mb-6 sm:mb-8 text-center text-portfolio-text-primary">AI-Powered Alert System</h3>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
         <AlertStage
           title="Grafana"
           description="Detects threshold breach (CPU > 80%, disk full, etc.)"
@@ -63,9 +63,9 @@ export function AlertPipeline() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.8, duration: 0.5 }}
-        className="mt-6 p-4 bg-white/60 border border-portfolio-border rounded"
+        className="mt-5 sm:mt-6 p-4 bg-white/60 border border-portfolio-border rounded"
       >
-        <p className="text-sm text-center text-portfolio-text-primary italic">
+        <p className="text-sm text-center text-portfolio-text-primary italic leading-relaxed">
           Result: Real-time alerts without VPN — faster response to downtime
         </p>
       </motion.div>
