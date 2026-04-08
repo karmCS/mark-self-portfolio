@@ -3,11 +3,11 @@ import { Project } from '@/types/project';
 export const projects: Project[] = [
   {
   slug: 'self-hosted-infrastructure',
-  title: 'Project Friday - Production Grade Self Hosted Infrastructure',
+  title: 'Project Friday - Enterprise Inspired Self Hosted Infrastructure',
   description: 'An AI-monitored personal cloud. Fully private, owned, operated, and controlled.',
   longDescription: `
     <h2>Overview</h2>
-    <p>A production-grade home infrastructure replacing cloud dependencies on services like iCloud and Google Drive. This project combines enterprise DevOps practices with AI-powered monitoring to create a fully private, self-hosted cloud platform.</p>
+    <p>An industry-adjacent home infrastructure reducing dependence on cloud services by self-hosting alternatives to iCloud Photos, Google Drive, and password managers. This project combines enterprise DevOps practices with AI-powered monitoring to create a fully private, self-hosted cloud platform.</p>
 
     <p>My interest in cloud infrastructure and virtual machines deepened after observing my university's CSE department, where VMs provide the flexibility needed for teaching operating systems. Rather than building a hobbyist setup, I focused on implementing industry-standard practices used in professional system administration and development operations.</p>
 
@@ -107,9 +107,9 @@ export const projects: Project[] = [
     </ul>
 
     <h2>Key Learnings</h2>
-    <p>This project proved to be an eye-opener. I spent considerable time planning the infrastructure architecture before hardware even arrived.</p>
+    <p>This project taught me that infrastructure work is iterative, not linear. I've rebuilt components multiple times—once catastrophically after a single command (rm -rf with no clear path) destroyed the Proxmox host, forcing a complete recovery from VM disk images. That experience taught me more about Proxmox storage architecture than any tutorial could.</p>
 
-    <p>Leveraging AI throughout development accelerated the timeline significantly. What could have taken months of debugging, documentation reading, and forum searching became fully operational in one week. Claude assisted with tool selection, security best practices, and troubleshooting.</p>
+    <p>Leveraging AI throughout development significantly accelerated the build time. </p>
 
     <p>The most important lesson: infrastructure is built in layers. Rather than duct-taping tools together, successful orchestration requires organized, purposeful architecture where each component fits deliberately into place.</p>
   `,

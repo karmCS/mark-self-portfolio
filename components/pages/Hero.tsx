@@ -32,7 +32,7 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 0.7 }}
           className="text-base sm:text-lg text-portfolio-text-secondary max-w-2xl mx-auto mb-12 leading-relaxed px-2"
         >
-          A motivated computer engineering student working to expand my skills in DevOps, system administration, and generative AI workflows
+          Infrastructure built the modern way. Human architecture, AI execution.
         </motion.p>
 
         <motion.div

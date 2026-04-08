@@ -59,8 +59,8 @@ export function CICDPipeline() {
       <AnimatedArrow delay={0.3} />
 
       <PipelineStage
-        title="GitHub Actions (Cloud Runner)"
-        description="GitHub-hosted runner receives webhook and starts workflow"
+        title="Self-Hosted Runner (VM 3)"
+        description="friday-k3s runner polls GitHub, receives webhook, starts workflow on same VM as k3s cluster"
         delay={0.6}
       />
 

@@ -5,8 +5,8 @@ import { Code, Cpu, Database, Wrench } from 'lucide-react';
 
 const skills = [
   {
-    category: 'Generative AI Development',
-    items: ['Claude for Infrastructure Code', 'Bolt.new for Web Applications', 'Prompt Engineering for System Design', 'AI-Driven Troubleshooting Workflows'],
+    category: 'Generative AI and Automation',
+    items: ['Local LLM Deployment', 'AI-Assisted Infrastructure Design', 'Python Discord Bot Deployment', 'Bolt.new for Web Applications',],
     icon: Code,
   },
   {
@@ -16,12 +16,12 @@ const skills = [
   },
   {
     category: 'Infrastructure Operations',
-    items: ['Linux Server Administration', 'Docker Container Management', 'Proxmox Virtualization'],
+    items: ['Linux Server Administration (Ubuntu 24.04)', 'Docker Container Orchestration', 'Proxmox Virtualization', 'Reverse Proxy and DNS Management'],
     icon: Database,
   },
   {
     category: 'Tools & Platforms',
-    items: ['VS Code and VSC Remote Development', 'Git Version Control', 'Command Line Operations', 'Self-Hosted Services Stack'],
+    items: ['VS Code and VSC Remote Development', 'Git Version Control', 'Command Line Operations', 'Infrastructure Monitoring'],
     icon: Wrench,
   },
 ];
@@ -52,7 +52,7 @@ export default function Home() {
                     About Me
                   </h2>
                   <p className="text-portfolio-text-secondary leading-relaxed text-lg">
-                    I'm Mark Calip, a third-year Computer Engineering student at California State University, San Bernardino, building practical DevOps skills through hands-on infrastructure work. I design and operate production-grade systems—from self-hosted cloud services to AI-powered monitoring pipelines—all running on hardware in my homelab. I'm passionate about AI-assisted workflows as the future of infrastructure work: I use local LLM inference for automation, build web applications with generative AI tooling, and treat AI as a productivity multiplier.  My approach combines Docker, Kubernetes, and modern DevOps tools with AI-first thinking, preparing me for a career where infrastructure isn't just managed—it's intelligently architected.
+                    I'm Mark Calip, a third-year Computer Engineering student at Cal State San Bernardino, building practical infrastructure and development skills in an AI-native way. I design and operate real systems—self-hosted services, monitoring pipelines, web applications—using AI as my primary development tool. My workflow treats AI like a team: I architect solutions, Claude writes configurations, Bolt generates frontends, and I integrate everything into production. Whether it's Docker orchestration, Kubernetes deployments, or full-stack web apps, I focus on system design and execution while leveraging generative AI for implementation speed. I'm preparing for roles in DevOps, cloud engineering, or any field where AI-assisted development is the norm—because I believe the future belongs to engineers who can think in systems and build with AI.
                   </p>
                 </div>
               </FadeInView>
