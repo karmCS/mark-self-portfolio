@@ -23,16 +23,25 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <main className="min-h-screen pt-16 pb-20 px-4 sm:px-8 md:px-16">
+      <main className="min-h-screen pt-24 sm:pt-16 pb-20 px-4 sm:px-8 md:px-16">
         <div className="max-w-content mx-auto">
           <FadeInView animateOnMount>
-            <Link
-              href="/projects"
-              className="inline-flex items-center gap-2 text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors mb-8"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Back to Projects
-            </Link>
+            <div className="flex items-center gap-4 mb-8 sm:mb-10">
+              <Link
+                href="/"
+                className="inline-flex items-center gap-2 text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors group"
+              >
+                <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+                <span className="font-serif text-sm sm:text-base">Home</span>
+              </Link>
+              <span className="text-portfolio-text-secondary/40">/</span>
+              <Link
+                href="/projects"
+                className="inline-flex items-center gap-2 text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors font-serif text-sm sm:text-base"
+              >
+                Projects
+              </Link>
+            </div>
           </FadeInView>
 
           <FadeInView delay={0.05} animateOnMount>

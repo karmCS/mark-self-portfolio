@@ -2,6 +2,8 @@ import Footer from '@/components/layout/Footer';
 import FadeInView from '@/components/animations/FadeInView';
 import ProjectCard from '@/components/ui/ProjectCard';
 import { getAllProjects } from '@/lib/projects';
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 
 export default function Projects() {
   const projects = getAllProjects();
@@ -11,6 +13,14 @@ export default function Projects() {
       <main className="min-h-screen pt-24 sm:pt-16 pb-20 px-4 sm:px-8 md:px-16">
         <div className="max-w-content mx-auto">
           <FadeInView>
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors mb-8 sm:mb-10 group"
+            >
+              <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
+              <span className="font-serif text-sm sm:text-base">Home</span>
+            </Link>
+
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans mb-5 sm:mb-6 leading-tight">
               Projects
             </h1>
