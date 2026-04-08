@@ -35,9 +35,9 @@ export default function Home() {
         <section id="about" className="py-24 px-4 sm:px-8 md:px-16 border-t border-portfolio-border">
           <div className="max-w-content mx-auto">
 
-            <div className="grid md:grid-cols-2 gap-16 mb-24 items-center">
+            <div className="grid md:grid-cols-2 gap-12 mb-24 items-center">
               <FadeInView>
-                <div className="aspect-[4/5] bg-portfolio-bg-secondary rounded-lg overflow-hidden">
+                <div className="aspect-[4/5] bg-portfolio-bg-secondary rounded-lg overflow-hidden max-w-sm mx-auto md:mx-0">
                   <img
                   src="/images/projects/cleanedheadshot.png"
                   alt="Mark Calip"
@@ -47,11 +47,11 @@ export default function Home() {
               </FadeInView>
 
               <FadeInView delay={0.15}>
-                <div className="space-y-6">
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+                <div className="space-y-5">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
                     About Me
                   </h2>
-                  <p className="text-portfolio-text-secondary leading-relaxed text-lg">
+                  <p className="text-portfolio-text-secondary leading-relaxed text-base">
                     I'm Mark Calip, a third-year Computer Engineering student at California State University, San Bernardino, building practical DevOps skills through hands-on infrastructure work. I design and operate production-grade systems—from self-hosted cloud services to AI-powered monitoring pipelines—all running on hardware in my homelab. I'm passionate about AI-assisted workflows as the future of infrastructure work: I use local LLM inference for automation, build web applications with generative AI tooling, and treat AI as a productivity multiplier.  My approach combines Docker, Kubernetes, and modern DevOps tools with AI-first thinking, preparing me for a career where infrastructure isn't just managed—it's intelligently architected.
                   </p>
                 </div>
