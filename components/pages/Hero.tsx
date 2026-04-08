@@ -3,11 +3,15 @@
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
+import { Meteors } from '@/components/ui/meteors';
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center relative px-6 sm:px-8 md:px-16 py-20 sm:py-0">
-      <div className="max-w-3xl mx-auto text-center">
+    <section className="min-h-screen flex items-center justify-center relative px-6 sm:px-8 md:px-16 py-20 sm:py-0 overflow-hidden">
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <Meteors number={12} className="bg-slate-400 opacity-30" />
+      </div>
+      <div className="max-w-3xl mx-auto text-center relative z-10">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
