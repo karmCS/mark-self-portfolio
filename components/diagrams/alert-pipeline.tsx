@@ -31,29 +31,29 @@ export function AlertPipeline() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
         <AlertStage
-          title="Grafana"
-          description="Detects threshold breach (CPU > 80%, disk full, etc.)"
+          title="Grafana (VM 1)"
+          description="Monitors metrics via InfluxDB; triggers on threshold breach"
           delay={0}
           icon="📊"
         />
 
         <AlertStage
-          title="n8n Workflow"
-          description="Receives webhook, extracts alert details"
+          title="n8n Workflow (VM 1)"
+          description="Receives Grafana webhook, formats alert context"
           delay={0.2}
           icon="⚙️"
         />
 
         <AlertStage
-          title="Ollama (Phi3:mini)"
-          description="Interprets alert into plain English"
+          title="Ollama (VM 2)"
+          description="Phi3:mini translates technical alert into plain English"
           delay={0.4}
           icon="🤖"
         />
 
         <AlertStage
-          title="Discord Bot"
-          description="Posts to server, viewable on phone"
+          title="Discord Bot (VM 2)"
+          description="Python bot posts human-readable alert to Discord server"
           delay={0.6}
           icon="💬"
         />
@@ -66,7 +66,7 @@ export function AlertPipeline() {
         className="mt-5 sm:mt-6 p-4 bg-white/60 border border-portfolio-border rounded"
       >
         <p className="text-sm text-center text-portfolio-text-primary italic leading-relaxed">
-          Result: Real-time alerts without VPN — faster response to downtime
+          All processing happens locally — no data leaves the homelab network
         </p>
       </motion.div>
     </div>

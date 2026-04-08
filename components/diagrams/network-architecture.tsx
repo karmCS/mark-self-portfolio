@@ -30,7 +30,7 @@ function NetworkNode({ title, description, delay, position }: NetworkNodeProps) 
 export function NetworkArchitecture() {
   return (
     <div className="w-full max-w-3xl mx-auto my-10 sm:my-16 p-5 sm:p-8 bg-portfolio-bg-secondary/60 rounded border border-portfolio-border">
-      <h3 className="text-xl sm:text-2xl font-sans mb-6 sm:mb-8 text-center text-portfolio-text-primary">Network Flow</h3>
+      <h3 className="text-xl sm:text-2xl font-sans mb-6 sm:mb-8 text-center text-portfolio-text-primary">Public Access Architecture</h3>
 
       <div className="mb-3 sm:mb-4">
         <NetworkNode
@@ -43,7 +43,7 @@ export function NetworkArchitecture() {
 
       <div className="mb-3 sm:mb-4">
         <NetworkNode
-          title="Cloudflare Tunnel"
+          title="Cloudflare"
           description="SSL termination, DDoS protection, CDN caching"
           delay={0.2}
           position="middle"
@@ -52,34 +52,38 @@ export function NetworkArchitecture() {
 
       <div className="mb-4 sm:mb-6">
         <NetworkNode
-          title="Caddy Reverse Proxy (VM 1)"
-          description="Routes traffic to *.friday.local domains"
+          title="Cloudflare Tunnel → k3s (VM 3)"
+          description="Direct tunnel from VM 1 to 192.168.68.103:30080"
           delay={0.4}
           position="middle"
         />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-4">
+      <div className="mb-4 sm:mb-6">
         <NetworkNode
-          title="k3s Cluster (VM 3)"
-          description="Portfolio website on NodePort 30080"
+          title="Portfolio Website (NodePort 30080)"
+          description="Next.js app running in Kubernetes pod"
           delay={0.6}
           position="bottom"
         />
+      </div>
 
-        <NetworkNode
-          title="Docker Services (VM 1)"
-          description="Immich, Vaultwarden, Nextcloud, etc."
-          delay={0.8}
-          position="bottom"
-        />
-
-        <NetworkNode
-          title="Ollama (VM 2)"
-          description="AI inference for alert interpretation"
-          delay={1}
-          position="bottom"
-        />
+      <div className="mt-6 sm:mt-8 pt-6 border-t border-portfolio-border">
+        <h4 className="text-lg font-sans mb-4 text-portfolio-text-primary">Internal Services (VM 1)</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+          <NetworkNode
+            title="Caddy Reverse Proxy"
+            description="Routes *.friday.local domains (Immich, Vaultwarden, Nextcloud)"
+            delay={0.8}
+            position="bottom"
+          />
+          <NetworkNode
+            title="Ollama (VM 2)"
+            description="AI inference for Grafana alert interpretation"
+            delay={1}
+            position="bottom"
+          />
+        </div>
       </div>
     </div>
   );

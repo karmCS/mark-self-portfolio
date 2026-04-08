@@ -59,8 +59,8 @@ export function CICDPipeline() {
       <AnimatedArrow delay={0.3} />
 
       <PipelineStage
-        title="Self-Hosted Runner (VM 3)"
-        description="GitHub Actions runner on k3s VM receives webhook"
+        title="GitHub Actions (Cloud Runner)"
+        description="GitHub-hosted runner receives webhook and starts workflow"
         delay={0.6}
       />
 
@@ -76,7 +76,7 @@ export function CICDPipeline() {
 
       <PipelineStage
         title="kubectl apply"
-        description="Deploy updated image to k3s cluster"
+        description="GitHub Actions deploys updated image to k3s cluster (VM 3)"
         delay={1.8}
       />
 
