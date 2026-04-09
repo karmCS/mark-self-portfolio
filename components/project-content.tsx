@@ -1,31 +1,17 @@
 'use client';
 
-import { CICDPipeline } from './diagrams/ci-cd-pipeline';
-import { AlertPipeline } from './diagrams/alert-pipeline';
-import { NetworkArchitecture } from './diagrams/network-architecture';
+import { ReactNode } from 'react';
 
 interface ProjectContentProps {
-  content: string;
+  content: string | ReactNode;
 }
 
 export function ProjectContent({ content }: ProjectContentProps) {
-  // Split content by diagram markers
-  const parts = content.split(/(<CICDPipeline \/>|<AlertPipeline \/>|<NetworkArchitecture \/>)/);
-  
-  return (
-    <div>
-      {parts.map((part, index) => {
-        if (part === '<CICDPipeline />') {
-          return <CICDPipeline key={index} />;
-        }
-        if (part === '<AlertPipeline />') {
-          return <AlertPipeline key={index} />;
-        }
-        if (part === '<NetworkArchitecture />') {
-          return <NetworkArchitecture key={index} />;
-        }
-        return <div key={index} dangerouslySetInnerHTML={{ __html: part }} />;
-      })}
-    </div>
-  );
+  // If content is already JSX, render it directly
+  if (typeof content !== 'string') {
+    return <div className="project-content">{content}</div>;
+  }
+
+  // Fallback for old string-based content 
+  return <div className="project-content" dangerouslySetInnerHTML={{ __html: content }} />;
 }
