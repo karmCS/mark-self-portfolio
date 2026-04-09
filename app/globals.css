@@ -2,60 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
+    --background: 45 20% 93%;
+    --foreground: 0 0% 7%;
+    --card: 45 20% 93%;
+    --card-foreground: 0 0% 7%;
+    --popover: 45 20% 93%;
+    --popover-foreground: 0 0% 7%;
+    --primary: 0 0% 7%;
+    --primary-foreground: 45 20% 93%;
+    --secondary: 45 15% 89%;
+    --secondary-foreground: 0 0% 7%;
+    --muted: 45 15% 89%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 45 15% 89%;
+    --accent-foreground: 0 0% 7%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+    --border: 40 12% 83%;
+    --input: 40 12% 83%;
+    --ring: 0 0% 7%;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-  }
-  .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --radius: 0rem;
   }
 }
 
@@ -68,51 +41,54 @@
     scroll-behavior: smooth;
   }
 
-body {
-  @apply bg-portfolio-bg-primary text-portfolio-text-primary;
-}
+  body {
+    @apply bg-portfolio-bg-primary text-portfolio-text-primary;
+    font-size: 13px;
+    letter-spacing: 0.01em;
+  }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-sans font-semibold;
-    letter-spacing: -0.025em;
+    @apply font-sans font-medium;
+    letter-spacing: -0.02em;
   }
+}
+
+.label-sm {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 500;
 }
 
 .project-content {
   @apply text-portfolio-text-secondary px-4 sm:px-0;
-  font-size: 1rem;
-  line-height: 1.8;
-}
-
-@media (min-width: 640px) {
-  .project-content {
-    font-size: 1.125rem;
-  }
+  font-size: 13px;
+  line-height: 1.75;
 }
 
 .project-content h2 {
-  @apply text-3xl sm:text-4xl md:text-5xl font-sans text-portfolio-text-primary mt-12 sm:mt-16 mb-6 sm:mb-8;
-  font-weight: 400;
-  letter-spacing: -0.03em;
+  @apply text-2xl sm:text-3xl font-sans text-portfolio-text-primary mt-12 mb-5;
+  font-weight: 500;
+  letter-spacing: -0.025em;
   line-height: 1.2;
 }
 
 .project-content h3 {
-  @apply text-xl sm:text-2xl md:text-3xl font-sans text-portfolio-text-primary mt-10 sm:mt-14 mb-5 sm:mb-6;
-  font-weight: 400;
-  letter-spacing: -0.02em;
+  @apply text-lg sm:text-xl font-sans text-portfolio-text-primary mt-8 mb-4;
+  font-weight: 500;
+  letter-spacing: -0.015em;
   line-height: 1.3;
 }
 
 .project-content h4 {
-  @apply text-lg sm:text-xl font-sans text-portfolio-text-primary mt-8 sm:mt-10 mb-4;
+  @apply text-base font-sans text-portfolio-text-primary mt-6 mb-3;
   font-weight: 500;
   line-height: 1.4;
 }
 
 .project-content p {
-  @apply mb-6 sm:mb-8;
-  line-height: 1.8;
+  @apply mb-5;
+  line-height: 1.75;
 }
 
 .project-content p strong {
@@ -121,24 +97,25 @@ body {
 }
 
 .project-content ul {
-  @apply mb-6 sm:mb-8 space-y-2 sm:space-y-3;
+  @apply mb-5 space-y-2;
 }
 
 .project-content li {
-  @apply text-portfolio-text-secondary pl-6 relative;
-  line-height: 1.8;
+  @apply text-portfolio-text-secondary pl-5 relative;
+  line-height: 1.75;
 }
 
 .project-content li::before {
-  content: "•";
+  content: "—";
   @apply absolute left-0;
-  color: #525252;
+  color: #999;
+  font-size: 11px;
 }
 
 .project-content img {
-  @apply rounded my-8 sm:my-10 w-full;
+  @apply my-8 w-full;
 }
 
 .project-content a {
-  @apply text-portfolio-accent underline decoration-1 underline-offset-2 hover:decoration-2 hover:opacity-80;
+  @apply text-portfolio-text-primary underline decoration-1 underline-offset-2 hover:text-portfolio-text-secondary transition-colors;
 }

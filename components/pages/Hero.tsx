@@ -7,66 +7,79 @@ import { Meteors } from '@/components/ui/meteors';
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center relative px-6 sm:px-8 md:px-16 py-20 sm:py-0 overflow-hidden">
+    <section className="min-h-screen flex flex-col justify-between relative overflow-hidden">
       <div className="absolute inset-0 z-0 pointer-events-none">
-        <Meteors number={80} />
+        <Meteors number={60} />
       </div>
-      <div className="max-w-3xl mx-auto text-center relative z-10">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans font-bold mb-6 sm:mb-5 tracking-tight leading-tight"
-        >
-          Mark Calip
-        </motion.h1>
 
-        <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        className="text-base sm:text-xl md:text-2xl text-portfolio-text-secondary mb-5 sm:mb-4 font-sans"
-        >
-          Computer Engineering Student
-        </motion.p>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.7 }}
-          className="text-sm sm:text-base text-portfolio-text-secondary max-w-xl mx-auto mb-10 leading-relaxed px-2"
-        >
-          Infrastructure built the modern way. Human architecture, AI execution.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.9 }}
-          className="flex items-center justify-center gap-4 sm:gap-6"
-        >
-          <Link
-            href="/projects"
-            className="px-6 sm:px-8 py-3 bg-portfolio-accent text-white font-medium rounded hover:opacity-90 transition-all duration-200 text-sm sm:text-base"
+      <div className="flex-1 flex items-end px-6 sm:px-10 md:px-16 pb-16 pt-32 relative z-10">
+        <div className="max-w-content w-full mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mb-3"
           >
-            View Projects
-          </Link>
-        </motion.div>
+            <span className="font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-secondary">
+              Computer Engineering Student
+            </span>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans font-medium tracking-tight leading-[1.02] mb-6"
+          >
+            Mark Calip
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="text-sm text-portfolio-text-secondary max-w-sm leading-relaxed mb-10"
+          >
+            Infrastructure built the modern way.
+            <br />
+            Human architecture, AI execution.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.65 }}
+            className="flex items-center gap-8"
+          >
+            <Link
+              href="/projects"
+              className="font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-primary border-b border-portfolio-text-primary pb-px hover:text-portfolio-text-secondary hover:border-portfolio-text-secondary transition-colors"
+            >
+              View Projects
+            </Link>
+            <a
+              href="#about"
+              className="font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors"
+            >
+              About
+            </a>
+          </motion.div>
+        </div>
       </div>
 
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        transition={{ delay: 1.2, duration: 0.5 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
       >
         <a href="#about" aria-label="Scroll to about section">
           <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
-            className="text-portfolio-text-secondary hover:text-portfolio-accent transition-colors"
+            animate={{ y: [0, 6, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+            className="text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors"
           >
-            <ChevronDown className="w-6 h-6" />
+            <ChevronDown className="w-4 h-4" />
           </motion.div>
         </a>
       </motion.div>

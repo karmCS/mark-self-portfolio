@@ -1,10 +1,8 @@
 import { notFound } from 'next/navigation';
 import Footer from '@/components/layout/Footer';
 import FadeInView from '@/components/animations/FadeInView';
-
 import { getProjectBySlug, getAllProjects } from '@/lib/projects';
 import { ProjectContent } from '@/components/project-content';
-import { Meteors } from '@/components/ui/meteors';
 import { Github, ExternalLink, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
@@ -24,62 +22,57 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <main className="min-h-screen pt-24 sm:pt-16 pb-20 px-4 sm:px-8 md:px-16">
-        <div className="max-w-content mx-auto">
-          <div className="relative overflow-hidden rounded-xl mb-12 -mx-4 sm:-mx-8 md:-mx-16 px-4 sm:px-8 md:px-16 pt-8 pb-2 bg-gradient-to-b from-portfolio-bg-secondary to-transparent">
-            <div className="absolute inset-0 z-0 pointer-events-none">
-              <Meteors number={10} className="bg-slate-400 opacity-25" />
-            </div>
-            <div className="relative z-10">
+      <main className="min-h-screen">
+        <div className="max-w-content mx-auto px-6 sm:px-10 md:px-16 pt-20 pb-24">
+
           <FadeInView animateOnMount>
-            <div className="flex items-center gap-4 mb-8 sm:mb-10">
+            <div className="flex items-center gap-3 mb-16">
               <Link
                 href="/"
-                className="inline-flex items-center gap-2 text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors group"
+                className="font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors group inline-flex items-center gap-1.5"
               >
-                <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-                <span className="font-serif text-sm sm:text-base">Home</span>
+                <ArrowLeft className="w-3 h-3 transition-transform group-hover:-translate-x-0.5" />
+                Home
               </Link>
-              <span className="text-portfolio-text-secondary/40">/</span>
+              <span className="text-portfolio-border">/</span>
               <Link
                 href="/projects"
-                className="inline-flex items-center gap-2 text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors font-serif text-sm sm:text-base"
+                className="font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors"
               >
                 Projects
               </Link>
             </div>
           </FadeInView>
 
-          <FadeInView delay={0.05} animateOnMount>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-sans mb-6">
-              {project.title}
-            </h1>
-          </FadeInView>
-
-          <FadeInView delay={0.1} animateOnMount>
-            <div className="flex flex-wrap gap-2 mb-8">
-              {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="px-4 py-2 bg-portfolio-bg-secondary border border-portfolio-border text-sm text-portfolio-text-secondary rounded-full"
-                >
-                  {tag}
-                </span>
-              ))}
+          <FadeInView delay={0.06} animateOnMount>
+            <div className="mb-8">
+              <div className="flex flex-wrap gap-4 mb-5">
+                {project.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="font-mono text-[9px] tracking-[0.14em] uppercase text-portfolio-text-secondary"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight leading-tight max-w-3xl">
+                {project.title}
+              </h1>
             </div>
           </FadeInView>
 
-          <FadeInView delay={0.15} animateOnMount>
-            <div className="flex items-center gap-6 mb-12">
+          <FadeInView delay={0.12} animateOnMount>
+            <div className="flex items-center gap-6 mb-14 border-b border-portfolio-border pb-8">
               {project.githubUrl && (
                 <a
                   href={project.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-portfolio-accent text-white font-medium rounded hover:opacity-90 transition-all duration-200"
+                  className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-primary border-b border-portfolio-text-primary pb-px hover:text-portfolio-text-secondary hover:border-portfolio-text-secondary transition-colors"
                 >
-                  <Github className="w-4 h-4" />
-                  View on GitHub
+                  <Github className="w-3 h-3" />
+                  View on Github
                 </a>
               )}
               {project.liveUrl && (
@@ -87,20 +80,18 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 border border-portfolio-border text-portfolio-text-primary font-medium rounded hover:border-portfolio-accent hover:text-portfolio-accent transition-all duration-200"
+                  className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors"
                 >
-                  <ExternalLink className="w-4 h-4" />
+                  <ExternalLink className="w-3 h-3" />
                   Live Demo
                 </a>
               )}
             </div>
           </FadeInView>
-            </div>
-          </div>
 
           {project.thumbnail && (
-            <FadeInView delay={0.2} animateOnMount>
-              <div className="aspect-video bg-portfolio-bg-secondary rounded-lg overflow-hidden mb-12">
+            <FadeInView delay={0.16} animateOnMount>
+              <div className="aspect-video bg-portfolio-bg-secondary overflow-hidden mb-14 border border-portfolio-border">
                 <img
                   src={project.thumbnail}
                   alt={project.title}
@@ -110,19 +101,19 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             </FadeInView>
           )}
 
-          <FadeInView delay={0.25} animateOnMount>
-            <div className="prose prose-invert max-w-none project-content">
+          <FadeInView delay={0.2} animateOnMount>
+            <div className="max-w-2xl project-content">
               <ProjectContent content={project.longDescription} />
             </div>
           </FadeInView>
 
           {project.images && project.images.length > 0 && (
-            <FadeInView delay={0.3} animateOnMount>
-              <div className="grid md:grid-cols-2 gap-6 mt-12">
+            <FadeInView delay={0.24} animateOnMount>
+              <div className="grid md:grid-cols-2 gap-4 mt-14">
                 {project.images.map((image, index) => (
                   <div
                     key={index}
-                    className="aspect-video bg-portfolio-bg-secondary rounded-lg overflow-hidden"
+                    className="aspect-video bg-portfolio-bg-secondary overflow-hidden border border-portfolio-border"
                   >
                     <img
                       src={image}

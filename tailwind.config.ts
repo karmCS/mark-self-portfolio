@@ -10,8 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', 'Inter', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
+        sans: ['var(--font-space)', 'Space Grotesk', 'sans-serif'],
+        mono: ['var(--font-space-mono)', 'Space Mono', 'monospace'],
       },
       screens: {
         sm: '640px',
@@ -34,12 +34,12 @@ const config: Config = {
       },
       colors: {
         portfolio: {
-          'bg-primary': '#FAFAFA',
-          'bg-secondary': '#F5F5F5',
-          'text-primary': '#171717',
-          'text-secondary': '#525252',
-          accent: '#2563EB',
-          border: '#E5E5E5',
+          'bg-primary': '#F2F0EB',
+          'bg-secondary': '#ECEAE4',
+          'text-primary': '#111111',
+          'text-secondary': '#666666',
+          accent: '#111111',
+          border: '#D8D5CE',
         },
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
@@ -84,25 +84,17 @@ const config: Config = {
       },
       keyframes: {
         'accordion-down': {
-          from: {
-            height: '0',
-          },
-          to: {
-            height: 'var(--radix-accordion-content-height)',
-          },
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
         },
         'accordion-up': {
-          from: {
-            height: 'var(--radix-accordion-content-height)',
-          },
-          to: {
-            height: '0',
-          },
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
         },
         meteor: {
           "0%": { transform: "rotate(215deg) translateX(0)", opacity: "0" },
-          "10%": { opacity: "1" },
-          "80%": { opacity: "1" },
+          "10%": { opacity: "0.6" },
+          "80%": { opacity: "0.6" },
           "100%": {
             transform: "rotate(215deg) translateX(-800px)",
             opacity: "0",

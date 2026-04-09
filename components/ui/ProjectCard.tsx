@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { Project } from '@/types/project';
 
 interface ProjectCardProps {
@@ -12,70 +12,47 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <motion.div
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.3 }}
-      className="bg-white/40 border border-portfolio-border rounded overflow-hidden group"
+      whileHover={{ opacity: 0.85 }}
+      transition={{ duration: 0.2 }}
+      className="group"
     >
-      <Link href={`/projects/${project.slug}`}>
-        <div className="aspect-video bg-portfolio-bg-secondary/40 relative overflow-hidden">
+      <Link href={`/projects/${project.slug}`} className="block">
+        <div className="aspect-[16/9] bg-portfolio-bg-secondary overflow-hidden mb-4 border border-portfolio-border">
           {project.thumbnail ? (
             <img
               src={project.thumbnail}
               alt={project.title}
-              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-portfolio-text-secondary">
-              <p className="text-sm font-sans italic">Project Image</p>
+            <div className="w-full h-full flex items-center justify-center">
+              <span className="font-mono text-[10px] tracking-[0.12em] uppercase text-portfolio-text-secondary">
+                No Image
+              </span>
             </div>
           )}
         </div>
 
-        <div className="p-5 sm:p-6">
-          <h3 className="text-xl sm:text-2xl font-sans mb-3 text-portfolio-text-primary transition-opacity group-hover:opacity-70 leading-tight">
-            {project.title}
-          </h3>
-          <p className="text-portfolio-text-secondary text-sm sm:text-base mb-4 line-clamp-3 sm:line-clamp-2 leading-relaxed italic">
-            {project.description}
-          </p>
-
-          <div className="flex flex-wrap gap-2 mb-4">
-            {project.tags.map((tag) => (
-              <span
-                key={tag}
-                className="px-2.5 sm:px-3 py-1 bg-portfolio-bg-primary/30 border border-portfolio-border text-xs text-portfolio-text-primary font-sans"
-              >
-                {tag}
-              </span>
-            ))}
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-3 mb-1.5">
+              {project.tags.slice(0, 3).map((tag) => (
+                <span
+                  key={tag}
+                  className="font-mono text-[9px] tracking-[0.12em] uppercase text-portfolio-text-secondary"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <h3 className="text-sm font-medium leading-snug text-portfolio-text-primary group-hover:text-portfolio-text-secondary transition-colors">
+              {project.title}
+            </h3>
+            <p className="text-xs text-portfolio-text-secondary mt-1 line-clamp-2 leading-relaxed">
+              {project.description}
+            </p>
           </div>
-
-          <div className="flex items-center gap-4 text-portfolio-text-secondary">
-            {project.githubUrl && (
-              <a
-                href={project.githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="hover:text-portfolio-text-primary transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-            )}
-            {project.liveUrl && (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="hover:text-portfolio-text-primary transition-colors"
-                aria-label="Live Demo"
-              >
-                <ExternalLink className="w-5 h-5" />
-              </a>
-            )}
-          </div>
+          <ArrowUpRight className="w-4 h-4 text-portfolio-text-secondary flex-shrink-0 mt-0.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </div>
       </Link>
     </motion.div>

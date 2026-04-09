@@ -3,36 +3,70 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import NavMenu from '@/components/ui/menu-hover-effects';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 20);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <motion.header
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-sm border-b border-portfolio-border' : 'bg-transparent'
+        scrolled
+          ? 'bg-portfolio-bg-primary/96 backdrop-blur-sm border-b border-portfolio-border'
+          : 'bg-transparent'
       }`}
     >
-      <div className="max-w-content mx-auto px-4 sm:px-8 md:px-16 py-6">
-        <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl md:text-3xl font-sans font-medium hover:opacity-70 transition-opacity whitespace-nowrap">
-          Mark Calip
-        </Link>
+      <div className="max-w-content mx-auto px-6 sm:px-10 md:px-16">
+        <div className="flex items-center justify-between h-12">
+          <Link
+            href="/"
+            className="font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-primary hover:text-portfolio-text-secondary transition-colors"
+          >
+            Mark Calip
+          </Link>
 
-          <NavMenu />
+          <nav className="flex items-center gap-8">
+            <Link
+              href="/projects"
+              className={`font-mono text-[10px] tracking-[0.15em] uppercase transition-colors ${
+                pathname === '/projects' || pathname?.startsWith('/projects/')
+                  ? 'text-portfolio-text-primary'
+                  : 'text-portfolio-text-secondary hover:text-portfolio-text-primary'
+              }`}
+            >
+              {pathname === '/projects' || pathname?.startsWith('/projects/') ? (
+                <span className="border-b border-portfolio-text-primary pb-px">Projects</span>
+              ) : 'Projects'}
+            </Link>
+            <a
+              href="https://github.com/karmCS"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors"
+            >
+              Github
+            </a>
+            <a
+              href="https://www.linkedin.com/in/mark-calip-a770a5271"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors"
+            >
+              LinkedIn
+            </a>
+          </nav>
         </div>
       </div>
     </motion.header>

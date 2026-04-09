@@ -11,41 +11,46 @@ export default function Projects() {
 
   return (
     <>
-      <main className="min-h-screen pt-24 sm:pt-16 pb-20 px-4 sm:px-8 md:px-16 relative overflow-hidden">
+      <main className="min-h-screen relative overflow-hidden">
         <div className="absolute inset-0 z-0 pointer-events-none">
-          <Meteors number={80} />
+          <Meteors number={50} />
         </div>
-        <div className="max-w-content mx-auto relative z-10">
+
+        <div className="max-w-content mx-auto px-6 sm:px-10 md:px-16 pt-24 pb-24 relative z-10">
           <FadeInView>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors mb-8 sm:mb-10 group"
+              className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors mb-16 group"
             >
-              <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-1" />
-              <span className="font-serif text-sm sm:text-base">Home</span>
+              <ArrowLeft className="w-3 h-3 transition-transform group-hover:-translate-x-0.5" />
+              Home
             </Link>
-
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-sans mb-5 sm:mb-6 leading-tight">
-              Projects
-            </h1>
-            <p className="text-portfolio-text-secondary text-base sm:text-lg mb-12 sm:mb-16 max-w-2xl leading-relaxed">
-              A collection of projects showcasing my work as I learn more about the world of development operations.
-            </p>
           </FadeInView>
 
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+          <FadeInView delay={0.08}>
+            <div className="mb-16">
+              <span className="font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-secondary block mb-4">
+                Selected Work
+              </span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight leading-tight">
+                Projects
+              </h1>
+            </div>
+          </FadeInView>
+
+          <div className="grid md:grid-cols-2 gap-x-10 gap-y-14">
             {projects.map((project, index) => (
-              <FadeInView key={project.slug} delay={0.2 + index * 0.1}>
+              <FadeInView key={project.slug} delay={0.12 + index * 0.08}>
                 <ProjectCard project={project} />
               </FadeInView>
             ))}
           </div>
 
           {projects.length === 0 && (
-            <FadeInView delay={0.2}>
-              <div className="text-center py-20">
-                <p className="text-portfolio-text-secondary text-lg">
-                  No projects yet. Check back soon!
+            <FadeInView delay={0.12}>
+              <div className="py-20 border-t border-portfolio-border">
+                <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-secondary">
+                  No projects yet — check back soon.
                 </p>
               </div>
             </FadeInView>

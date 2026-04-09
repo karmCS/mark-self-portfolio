@@ -1,16 +1,25 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Space_Grotesk, Space_Mono } from 'next/font/google';
+import Header from '@/components/layout/Header';
 
-const inter = Inter({
+const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-space',
   display: 'swap',
+  weight: ['300', '400', '500', '600', '700'],
+});
+
+const spaceMono = Space_Mono({
+  subsets: ['latin'],
+  variable: '--font-space-mono',
+  display: 'swap',
+  weight: ['400', '700'],
 });
 
 export const metadata: Metadata = {
-  title: 'Personal Portfolio',
-  description: 'Computer Engineering Student Portfolio',
+  title: 'Mark Calip',
+  description: 'Computer Engineering Student — Infrastructure & DevOps',
 };
 
 export default function RootLayout({
@@ -19,8 +28,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className="font-sans bg-portfolio-bg-primary text-portfolio-text-primary antialiased">{children}</body>
+    <html lang="en" className={`${spaceGrotesk.variable} ${spaceMono.variable}`}>
+      <body className="font-sans bg-portfolio-bg-primary text-portfolio-text-primary antialiased">
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
