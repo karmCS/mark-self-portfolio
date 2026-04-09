@@ -16,7 +16,7 @@ export const projects: Project[] = [
         <p>My interest in cloud infrastructure and virtual machines deepened after observing my university's CSE department, where VMs provide the flexibility needed for teaching operating systems. Rather than building a hobbyist setup, I focused on implementing industry-standard practices used in professional system administration and development operations.</p>
 
         <h2>Hardware</h2>
-        <p><strong>Dell Optiplex 3080 Micro</strong> (refurbished) running Ubuntu Server</p>
+        <p><strong>Dell Optiplex 3080 Micro</strong> running Ubuntu Server</p>
         <ul>
           <li>Intel i5-10500t (6 cores, 12 threads)</li>
           <li>16 GB DDR4 SODIMM</li>
