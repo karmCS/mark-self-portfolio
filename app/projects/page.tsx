@@ -57,7 +57,7 @@ export default function Projects() {
           </div>
 
           <FadeInView delay={0.14}>
-            <div className="mb-14">
+            <div className="mb-20">
               <CurrentWorkCard />
             </div>
           </FadeInView>
