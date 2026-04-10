@@ -5,11 +5,11 @@ import FadeInView from '@/components/animations/FadeInView';
 const skills = [
   {
     category: 'Generative AI & Automation',
-    items: ['Local LLM Deployment', 'AI-Assisted Infrastructure Design', 'Python Discord Bot Deployment', 'Bolt.new for Web Applications'],
+    items: ['Local LLM Deployment', 'AI-Assisted Infrastructure Design', 'Discord Bot Development (Python)', 'Rapid Web App Development'],
   },
   {
     category: 'Hardware',
-    items: ['x86 Server Architecture', 'Multi-Tier Storage (NVMe/SATA/HDD)', 'Computer Hardware Fluency', 'Intuitive Hardware Troubleshooting'],
+    items: ['x86 Server Architecture', 'Storage Systems', 'Computer Hardware Fluency', 'Hardware Troubleshooting and Root Cause Analysis'],
   },
   {
     category: 'Infrastructure Operations',
@@ -17,7 +17,7 @@ const skills = [
   },
   {
     category: 'Tools & Platforms',
-    items: ['VS Code & Remote Development', 'Git Version Control', 'Command Line Operations', 'Infrastructure Monitoring'],
+    items: ['VS Code & Remote Development Environments', 'Git Version Control', 'Command Line Operations', 'Infrastructure Monitoring'],
   },
 ];
 
