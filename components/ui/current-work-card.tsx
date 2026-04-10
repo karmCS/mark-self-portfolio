@@ -3,7 +3,14 @@
 import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-import StackedArticleCards, { WorkItem } from '@/components/ui/stacked-article-cards'
+import { ArrowUpRight } from 'lucide-react'
+
+interface WorkItem {
+  title: string
+  subTitle: string
+  tags: string[]
+  status?: string
+}
 
 const currentWork: WorkItem[] = [
   {
@@ -24,7 +31,7 @@ export default function CurrentWorkCard() {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="border border-portfolio-border bg-portfolio-bg-primary">
+    <div className="mt-16 border border-portfolio-border bg-portfolio-bg-primary">
       <button
         className="w-full flex items-start justify-between px-6 py-5 group"
         onClick={() => setOpen((v) => !v)}
@@ -55,8 +62,35 @@ export default function CurrentWorkCard() {
             transition={{ duration: 0.35, ease: [0.075, 0.82, 0.165, 1] }}
             className="overflow-hidden"
           >
-            <div className="border-t border-portfolio-border px-6 pt-5 pb-6">
-              <StackedArticleCards items={currentWork} />
+            <div className="border-t border-portfolio-border divide-y divide-portfolio-border">
+              {currentWork.map((item, index) => (
+                <div key={index} className="flex items-center h-[88px] px-6 gap-5 bg-portfolio-bg-primary hover:bg-portfolio-bg-secondary transition-colors">
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-3 mb-1">
+                      {item.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="font-mono text-[9px] tracking-[0.12em] uppercase text-portfolio-text-secondary"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                      {item.status && (
+                        <span className="font-mono text-[9px] tracking-[0.12em] uppercase text-portfolio-text-secondary border border-portfolio-border px-1.5 py-0.5">
+                          {item.status}
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-sm font-medium text-portfolio-text-primary truncate leading-snug">
+                      {item.title}
+                    </p>
+                    <p className="text-xs text-portfolio-text-secondary mt-0.5 line-clamp-1 leading-relaxed">
+                      {item.subTitle}
+                    </p>
+                  </div>
+                  <ArrowUpRight className="w-4 h-4 text-portfolio-text-secondary flex-shrink-0" />
+                </div>
+              ))}
             </div>
           </motion.div>
         )}
