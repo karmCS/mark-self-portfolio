@@ -2,6 +2,7 @@ import { Project } from '@/types/project';
 import { AlertPipeline } from '@/components/diagrams/alert-pipeline';
 import { CICDPipeline } from '@/components/diagrams/ci-cd-pipeline';
 import { NetworkArchitecture } from '@/components/diagrams/network-architecture';
+import CollapsibleInfoCard from '@/components/ui/collapsible-info-card';
 
 export const projects: Project[] = [
   {
@@ -16,20 +17,19 @@ export const projects: Project[] = [
         <p>My interest in cloud infrastructure and virtual machines deepened after observing my university's CSE department, where VMs provide the flexibility needed for teaching operating systems. Rather than building a hobbyist setup, I focused on implementing industry-standard practices used in professional system administration and development operations.</p>
 
         <h2>Hardware</h2>
-        <div className="border border-[#D8D5CE] p-6 my-6 not-prose">
-          <span className="font-mono text-[9px] tracking-[0.14em] uppercase text-[#666666] block mb-4">Dell Optiplex 3080 Micro — Ubuntu Server</span>
+        <CollapsibleInfoCard label="Dell Optiplex 3080 Micro — Ubuntu Server">
           <ul className="space-y-2">
             <li className="text-[13px] text-[#666666] pl-5 relative leading-relaxed before:content-['—'] before:absolute before:left-0 before:text-[#999] before:text-[11px]">Intel i5-10500t (6 cores, 12 threads)</li>
             <li className="text-[13px] text-[#666666] pl-5 relative leading-relaxed before:content-['—'] before:absolute before:left-0 before:text-[#999] before:text-[11px]">16 GB DDR4 SODIMM</li>
             <li className="text-[13px] text-[#666666] pl-5 relative leading-relaxed before:content-['—'] before:absolute before:left-0 before:text-[#999] before:text-[11px]">500 GB NVMe SSD + 500 GB SATA SSD</li>
             <li className="text-[13px] text-[#666666] pl-5 relative leading-relaxed before:content-['—'] before:absolute before:left-0 before:text-[#999] before:text-[11px]">4TB HDD (external bay)</li>
           </ul>
-        </div>
+        </CollapsibleInfoCard>
 
         <h2>Architecture</h2>
 
-        <div className="border border-[#D8D5CE] p-6 my-6 not-prose">
-          <span className="font-mono text-[9px] tracking-[0.14em] uppercase text-[#666666] block mb-4">Virtualization — Proxmox VE</span>
+        <CollapsibleInfoCard label="Virtualization + Storage Architecture — Proxmox VE">
+          <span className="font-mono text-[9px] tracking-[0.14em] uppercase text-[#999] block mb-3">Virtualization — Proxmox VE</span>
           <ul className="space-y-2 mb-6">
             <li className="text-[13px] text-[#666666] pl-5 relative leading-relaxed before:content-['—'] before:absolute before:left-0 before:text-[#999] before:text-[11px]"><span className="text-[#111111] font-medium">VM 1:</span> Main services (8GB RAM, 6 cores)</li>
             <li className="text-[13px] text-[#666666] pl-5 relative leading-relaxed before:content-['—'] before:absolute before:left-0 before:text-[#999] before:text-[11px]"><span className="text-[#111111] font-medium">VM 2:</span> AI inference (4GB RAM, 2 cores)</li>
@@ -37,7 +37,7 @@ export const projects: Project[] = [
           </ul>
 
           <div className="border-t border-[#D8D5CE] pt-5">
-            <span className="font-mono text-[9px] tracking-[0.14em] uppercase text-[#666666] block mb-4">Storage Architecture</span>
+            <span className="font-mono text-[9px] tracking-[0.14em] uppercase text-[#999] block mb-4">Storage Architecture</span>
             <p className="text-[11px] font-mono tracking-[0.1em] uppercase text-[#999] mb-2">Primary Storage</p>
             <ul className="space-y-2 mb-4">
               <li className="text-[13px] text-[#666666] pl-5 relative leading-relaxed before:content-['—'] before:absolute before:left-0 before:text-[#999] before:text-[11px]">500 GB NVMe for active files</li>
@@ -50,33 +50,30 @@ export const projects: Project[] = [
             </ul>
             <p className="text-[13px] text-[#666666] leading-relaxed mt-2"><span className="text-[#111111] font-medium">Current Limitations:</span> Achieving the 3-2-1 backup rule on a budget remains challenging. iPhone backups are locked to iCloud, and Immich/Nextcloud lack affordable offsite solutions. The infrastructure is designed for scalability as storage costs improve.</p>
           </div>
-        </div>
+        </CollapsibleInfoCard>
 
-        <div className="border border-[#D8D5CE] p-6 my-6 not-prose">
-          <span className="font-mono text-[9px] tracking-[0.14em] uppercase text-[#666666] block mb-4">Containerization</span>
+        <CollapsibleInfoCard label="Containerization">
           <ul className="space-y-2">
             <li className="text-[13px] text-[#666666] pl-5 relative leading-relaxed before:content-['—'] before:absolute before:left-0 before:text-[#999] before:text-[11px]">Docker + Docker Compose with organized category-based compose files</li>
             <li className="text-[13px] text-[#666666] pl-5 relative leading-relaxed before:content-['—'] before:absolute before:left-0 before:text-[#999] before:text-[11px]">Portainer for container management and live log streaming</li>
           </ul>
-        </div>
+        </CollapsibleInfoCard>
 
-        <div className="border border-[#D8D5CE] p-6 my-6 not-prose">
-          <span className="font-mono text-[9px] tracking-[0.14em] uppercase text-[#666666] block mb-4">Networking Stack</span>
+        <CollapsibleInfoCard label="Networking Stack">
           <ul className="space-y-2">
             <li className="text-[13px] text-[#666666] pl-5 relative leading-relaxed before:content-['—'] before:absolute before:left-0 before:text-[#999] before:text-[11px]">Caddy reverse proxy with automatic HTTPS</li>
             <li className="text-[13px] text-[#666666] pl-5 relative leading-relaxed before:content-['—'] before:absolute before:left-0 before:text-[#999] before:text-[11px]">Pi-hole + Unbound for private DNS and network-wide ad blocking</li>
             <li className="text-[13px] text-[#666666] pl-5 relative leading-relaxed before:content-['—'] before:absolute before:left-0 before:text-[#999] before:text-[11px]">WireGuard VPN for secure remote access</li>
           </ul>
-        </div>
+        </CollapsibleInfoCard>
 
-        <div className="border border-[#D8D5CE] p-6 my-6 not-prose">
-          <span className="font-mono text-[9px] tracking-[0.14em] uppercase text-[#666666] block mb-4">Monitoring & Observability</span>
+        <CollapsibleInfoCard label="Monitoring & Observability">
           <ul className="space-y-2">
             <li className="text-[13px] text-[#666666] pl-5 relative leading-relaxed before:content-['—'] before:absolute before:left-0 before:text-[#999] before:text-[11px]">InfluxDB for time-series metrics storage</li>
             <li className="text-[13px] text-[#666666] pl-5 relative leading-relaxed before:content-['—'] before:absolute before:left-0 before:text-[#999] before:text-[11px]">Telegraf agents collecting CPU, RAM, and disk metrics</li>
             <li className="text-[13px] text-[#666666] pl-5 relative leading-relaxed before:content-['—'] before:absolute before:left-0 before:text-[#999] before:text-[11px]">Grafana dashboards with threshold-based alerting</li>
           </ul>
-        </div>
+        </CollapsibleInfoCard>
 
         <h3>AI-Powered Monitoring</h3>
         <p>AI-powered automation is reshaping infrastructure operations. This project integrates local LLM inference into real-world monitoring workflows, demonstrating how AI can interpret system alerts and reduce response times.</p>
