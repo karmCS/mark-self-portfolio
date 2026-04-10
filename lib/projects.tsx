@@ -92,7 +92,7 @@ export const projects: Project[] = [
           </div>
         </CollapsibleInfoCard>
 
-        <CollapsibleInfoCard label="Website Infrastructure">
+        <CollapsibleInfoCard label="Website Infrastructure - PS I host this website on the homelab too.  ">
           <div className="space-y-6">
             <div>
               <span className="font-mono text-[9px] tracking-[0.14em] uppercase text-[#999] block mb-3">Kubernetes Deployment (K3s)</span>

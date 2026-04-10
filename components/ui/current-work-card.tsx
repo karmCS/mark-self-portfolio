@@ -7,22 +7,16 @@ import StackedArticleCards, { WorkItem } from '@/components/ui/stacked-article-c
 
 const currentWork: WorkItem[] = [
   {
-    title: 'K3s Kubernetes Homelab Expansion',
-    subTitle: 'Scaling the cluster to multi-node with dedicated worker VMs and Helm chart deployments.',
-    tags: ['Kubernetes', 'Infrastructure'],
-    status: 'In Progress',
+    title: 'Project Bloo',
+    subTitle: 'Developing web platform for Orange County based meal-prep delivery platform.',
+    tags: ['Marketplace', 'Web-Development'],
+    status: 'In Production',
   },
   {
-    title: 'AI Monitoring Pipeline v2',
-    subTitle: 'Upgrading Phi3:mini to a larger model with GPU passthrough for faster inference.',
-    tags: ['AI', 'DevOps'],
-    status: 'In Progress',
-  },
-  {
-    title: 'Immich Offsite Backup Solution',
-    subTitle: 'Implementing encrypted rclone sync to Backblaze B2 for full 3-2-1 compliance.',
-    tags: ['Storage', 'Linux'],
-    status: 'Planning',
+    title: 'Simulated Multi-Tenant IoT Monitoring Platform',
+    subTitle: 'A SaaS vibration sensor monitoring simulation based on the Inland Empire Utilities Agency Remote Vibration Project.',
+    tags: ['IIot', 'Python', 'Automation'],
+    status: 'In Production',
   },
 ]
 

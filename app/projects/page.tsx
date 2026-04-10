@@ -39,12 +39,6 @@ export default function Projects() {
             </div>
           </FadeInView>
 
-          <FadeInView delay={0.14}>
-            <div className="mb-14">
-              <CurrentWorkCard />
-            </div>
-          </FadeInView>
-
           <FadeInView delay={0.18}>
             <div className="mb-8 flex items-center gap-6">
               <span className="font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-secondary">
@@ -61,6 +55,12 @@ export default function Projects() {
               </FadeInView>
             ))}
           </div>
+
+          <FadeInView delay={0.14}>
+            <div className="mb-14">
+              <CurrentWorkCard />
+            </div>
+          </FadeInView>
 
           {projects.length === 0 && (
             <FadeInView delay={0.2}>
