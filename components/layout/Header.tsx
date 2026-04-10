@@ -66,6 +66,12 @@ export default function Header() {
             >
               LinkedIn
             </a>
+            <a
+              href="mailto:mark.c.calip@gmail.com"
+              className="font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors"
+            >
+              Email
+            </a>
           </nav>
         </div>
       </div>

@@ -7,12 +7,12 @@ import { Meteors } from '@/components/ui/meteors';
 
 export default function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-between relative overflow-hidden">
+    <section className="min-h-screen flex flex-col justify-center relative overflow-hidden">
       <div className="absolute inset-0 z-0 pointer-events-none">
         <Meteors number={60} />
       </div>
 
-      <div className="flex-1 flex items-end px-6 sm:px-10 md:px-16 pb-16 pt-32 relative z-10">
+      <div className="px-6 sm:px-10 md:px-16 pt-24 pb-20 sm:pb-24 relative z-10">
         <div className="max-w-content w-full mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -29,7 +29,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35 }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-sans font-medium tracking-tight leading-[1.02] mb-6"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-sans font-medium tracking-tight leading-[1.02] mb-5"
           >
             Mark Calip
           </motion.h1>
@@ -38,7 +38,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="text-sm text-portfolio-text-secondary max-w-sm leading-relaxed mb-10"
+            className="text-sm text-portfolio-text-secondary max-w-sm leading-relaxed mb-8"
           >
             Infrastructure built the modern way.
             <br />
@@ -71,7 +71,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        className="absolute bottom-16 sm:bottom-20 left-1/2 -translate-x-1/2 z-10"
       >
         <a href="#about" aria-label="Scroll to about section">
           <motion.div

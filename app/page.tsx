@@ -28,7 +28,7 @@ export default function Home() {
         <Hero />
 
         <section id="about" className="border-t border-portfolio-border">
-          <div className="max-w-content mx-auto px-6 sm:px-10 md:px-16 py-20 sm:py-28">
+          <div className="max-w-content mx-auto px-6 sm:px-10 md:px-16 py-12 sm:py-20">
 
             <div className="grid md:grid-cols-[1fr_1.6fr] gap-16 md:gap-24 mb-24 items-start">
               <FadeInView>
@@ -116,7 +116,7 @@ export default function Home() {
                     Graduation
                   </span>
                   <p className="text-sm text-portfolio-text-secondary pt-3">
-                    Spring 2026
+                    Spring 2027
                   </p>
 
                   <span className="font-mono text-[10px] tracking-[0.12em] uppercase text-portfolio-text-secondary self-start mt-0.5 pt-3">
