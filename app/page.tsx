@@ -120,10 +120,10 @@ export default function Home() {
                   </p>
 
                   <span className="font-mono text-[10px] tracking-[0.12em] uppercase text-portfolio-text-secondary self-start mt-0.5 pt-3">
-                    Coursework
+                    Completed Coursework
                   </span>
                   <p className="text-sm text-portfolio-text-secondary pt-3">
-                    Computer Architecture · Embedded Systems · Operating Systems
+                    Computer Architecture · Embedded Systems · Operating Systems · Computer Science I and II · Machine Organization · Digital Logic · Computer Architecture
                   </p>
                 </div>
               </div>
