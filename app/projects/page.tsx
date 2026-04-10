@@ -1,6 +1,7 @@
 import Footer from '@/components/layout/Footer';
 import FadeInView from '@/components/animations/FadeInView';
 import ProjectCard from '@/components/ui/ProjectCard';
+import CurrentWorkCard from '@/components/ui/current-work-card';
 import { Meteors } from '@/components/ui/meteors';
 import { getAllProjects } from '@/lib/projects';
 import Link from 'next/link';
@@ -38,16 +39,31 @@ export default function Projects() {
             </div>
           </FadeInView>
 
+          <FadeInView delay={0.14}>
+            <div className="mb-14">
+              <CurrentWorkCard />
+            </div>
+          </FadeInView>
+
+          <FadeInView delay={0.18}>
+            <div className="mb-8 flex items-center gap-6">
+              <span className="font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-secondary">
+                Completed
+              </span>
+              <div className="flex-1 h-px bg-portfolio-border" />
+            </div>
+          </FadeInView>
+
           <div className="grid md:grid-cols-2 gap-x-10 gap-y-14">
             {projects.map((project, index) => (
-              <FadeInView key={project.slug} delay={0.12 + index * 0.08}>
+              <FadeInView key={project.slug} delay={0.2 + index * 0.08}>
                 <ProjectCard project={project} />
               </FadeInView>
             ))}
           </div>
 
           {projects.length === 0 && (
-            <FadeInView delay={0.12}>
+            <FadeInView delay={0.2}>
               <div className="py-20 border-t border-portfolio-border">
                 <p className="font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-secondary">
                   No projects yet — check back soon.
