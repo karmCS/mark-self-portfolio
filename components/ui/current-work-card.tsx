@@ -64,9 +64,9 @@ export default function CurrentWorkCard() {
           >
             <div className="border-t border-portfolio-border divide-y divide-portfolio-border">
               {currentWork.map((item, index) => (
-                <div key={index} className="flex items-center h-[88px] px-6 gap-5 bg-portfolio-bg-primary hover:bg-portfolio-bg-secondary transition-colors">
+                <div key={index} className="flex items-start py-5 px-6 gap-5 bg-portfolio-bg-primary hover:bg-portfolio-bg-secondary transition-colors">
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-3 mb-1">
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 mb-1">
                       {item.tags.map((tag) => (
                         <span
                           key={tag}
@@ -76,7 +76,7 @@ export default function CurrentWorkCard() {
                         </span>
                       ))}
                       {item.status && (
-                        <span className="font-mono text-[9px] tracking-[0.12em] uppercase text-portfolio-text-secondary border border-portfolio-border px-1.5 py-0.5">
+                        <span className="font-mono text-[9px] tracking-[0.12em] uppercase text-portfolio-text-secondary border border-portfolio-border px-1.5 py-0.5 whitespace-nowrap">
                           {item.status}
                         </span>
                       )}
