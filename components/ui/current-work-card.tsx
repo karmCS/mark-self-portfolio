@@ -83,10 +83,10 @@ export default function CurrentWorkCard() {
                         ))}
                       </div>
                     </div>
-                    <p className="text-sm font-medium text-portfolio-text-primary truncate leading-snug">
+                    <p className="text-sm font-medium text-portfolio-text-primary leading-snug sm:truncate">
                       {item.title}
                     </p>
-                    <p className="text-xs text-portfolio-text-secondary mt-0.5 line-clamp-1 leading-relaxed">
+                    <p className="text-xs text-portfolio-text-secondary mt-0.5 leading-relaxed sm:line-clamp-1">
                       {item.subTitle}
                     </p>
                   </div>
