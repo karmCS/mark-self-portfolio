@@ -58,27 +58,29 @@ export default function CurrentWorkCard() {
           >
             <div className="border-t border-portfolio-border divide-y divide-portfolio-border">
               {currentWork.map((item, index) => (
-                <div key={index} className="flex items-center h-[88px] px-6 gap-5 bg-portfolio-bg-primary hover:bg-portfolio-bg-secondary transition-colors">
+                <div key={index} className="flex items-start py-5 px-6 gap-5 bg-portfolio-bg-primary hover:bg-portfolio-bg-secondary transition-colors">
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-3 mb-1">
-                      {item.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="font-mono text-[9px] tracking-[0.12em] uppercase text-portfolio-text-secondary"
-                        >
-                          {tag}
-                        </span>
-                      ))}
                       {item.status && (
-                        <span className="font-mono text-[9px] tracking-[0.12em] uppercase text-portfolio-text-secondary border border-portfolio-border px-1.5 py-0.5">
+                        <span className="font-mono text-[9px] tracking-[0.12em] uppercase text-portfolio-text-secondary border border-portfolio-border px-1.5 py-0.5 whitespace-nowrap shrink-0">
                           {item.status}
                         </span>
                       )}
+                      <div className="flex items-center gap-3 min-w-0 overflow-hidden">
+                        {item.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="font-mono text-[9px] tracking-[0.12em] uppercase text-portfolio-text-secondary whitespace-nowrap"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
-                    <p className="text-sm font-medium text-portfolio-text-primary truncate leading-snug">
+                    <p className="text-sm font-medium text-portfolio-text-primary leading-snug sm:truncate">
                       {item.title}
                     </p>
-                    <p className="text-xs text-portfolio-text-secondary mt-0.5 line-clamp-1 leading-relaxed">
+                    <p className="text-xs text-portfolio-text-secondary mt-0.5 leading-relaxed sm:line-clamp-1">
                       {item.subTitle}
                     </p>
                   </div>
