@@ -15,14 +15,8 @@ interface WorkItem {
 const currentWork: WorkItem[] = [
   {
     title: 'Project Bloo',
-    subTitle: 'Developing web platform for Orange County based meal-prep delivery platform.',
+    subTitle: 'Developing web platform for Loma Linda based meal-prep delivery service. Cataloging and bringing exposure to small food businesses in the area',
     tags: ['Marketplace', 'Web-Development'],
-    status: 'In Production',
-  },
-  {
-    title: 'Simulated Multi-Tenant IoT Monitoring Platform',
-    subTitle: 'A SaaS vibration sensor monitoring simulation based on the Inland Empire Utilities Agency Remote Vibration Project.',
-    tags: ['IIot', 'Python', 'Automation'],
     status: 'In Production',
   },
 ]
