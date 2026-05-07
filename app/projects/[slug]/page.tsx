@@ -3,6 +3,7 @@ import Footer from '@/components/layout/Footer';
 import FadeInView from '@/components/animations/FadeInView';
 import { getProjectBySlug, getAllProjects } from '@/lib/projects';
 import { ProjectContent } from '@/components/project-content';
+import ScreenshotSlideshow from '@/components/ui/screenshot-slideshow';
 import { Github, ExternalLink, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 
@@ -23,10 +24,10 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
   return (
     <>
       <main className="min-h-screen">
-        <div className="max-w-content mx-auto px-6 sm:px-10 md:px-16 pt-20 pb-24">
+        <article className="max-w-content mx-auto px-6 sm:px-10 md:px-16 pt-20 pb-32">
 
           <FadeInView animateOnMount>
-            <div className="flex items-center gap-3 mb-16">
+            <div className="flex items-center gap-3 mb-20">
               <Link
                 href="/"
                 className="font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors group inline-flex items-center gap-1.5"
@@ -44,72 +45,89 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             </div>
           </FadeInView>
 
-          <FadeInView delay={0.06} animateOnMount>
-            <div className="mb-8">
-              <div className="flex flex-wrap gap-4 mb-5">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="font-mono text-[9px] tracking-[0.14em] uppercase text-portfolio-text-secondary"
-                  >
+          <header className="mb-20">
+            <FadeInView delay={0.06} animateOnMount>
+              <div className="flex flex-wrap gap-x-3 gap-y-2 mb-8 font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-secondary">
+                {project.tags.map((tag, i) => (
+                  <span key={tag} className="inline-flex items-center gap-x-3">
                     {tag}
+                    {i < project.tags.length - 1 && (
+                      <span className="text-portfolio-border" aria-hidden="true">
+                        ·
+                      </span>
+                    )}
                   </span>
                 ))}
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight leading-tight max-w-3xl">
+            </FadeInView>
+
+            <FadeInView delay={0.12} animateOnMount>
+              <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl font-medium tracking-tight leading-[1.02] max-w-4xl mb-12">
                 {project.title}
               </h1>
-            </div>
-          </FadeInView>
+            </FadeInView>
 
-          <FadeInView delay={0.12} animateOnMount>
-            <div className="flex items-center gap-6 mb-14 border-b border-portfolio-border pb-8">
-              {project.githubUrl && (
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-primary border-b border-portfolio-text-primary pb-px hover:text-portfolio-text-secondary hover:border-portfolio-text-secondary transition-colors"
-                >
-                  <Github className="w-3 h-3" />
-                  View on Github
-                </a>
-              )}
-              {project.liveUrl && (
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors"
-                >
-                  <ExternalLink className="w-3 h-3" />
-                  Live Demo
-                </a>
-              )}
-            </div>
-          </FadeInView>
+            {(project.githubUrl || project.liveUrl) && (
+              <FadeInView delay={0.18} animateOnMount>
+                <div className="flex items-center gap-8 pt-6 border-t border-portfolio-border">
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-primary transition-colors"
+                    >
+                      <Github className="w-3 h-3" />
+                      <span className="border-b border-portfolio-text-primary pb-px group-hover:border-portfolio-text-secondary group-hover:text-portfolio-text-secondary transition-colors">
+                        View on Github
+                      </span>
+                    </a>
+                  )}
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors"
+                    >
+                      <ExternalLink className="w-3 h-3" />
+                      Live Demo
+                    </a>
+                  )}
+                </div>
+              </FadeInView>
+            )}
+          </header>
 
           {project.thumbnail && (
-            <FadeInView delay={0.16} animateOnMount>
-              <div className="aspect-video bg-portfolio-bg-secondary overflow-hidden mb-14 border border-portfolio-border">
+            <FadeInView delay={0.24} animateOnMount>
+              <figure className="mb-24 bg-portfolio-bg-secondary border border-portfolio-border h-[420px] sm:h-[520px] md:h-[640px] flex items-center justify-center overflow-hidden">
                 <img
                   src={project.thumbnail}
                   alt={project.title}
-                  className="w-full h-full object-cover"
+                  className="max-w-full max-h-full object-contain"
                 />
+              </figure>
+            </FadeInView>
+          )}
+
+          {project.screenshotTracks && project.screenshotTracks.length > 0 && (
+            <FadeInView delay={0.06}>
+              <div className="mb-24">
+                <ScreenshotSlideshow tracks={project.screenshotTracks} />
               </div>
             </FadeInView>
           )}
 
-          <FadeInView delay={0.2} animateOnMount>
-            <div className="max-w-2xl project-content">
+          <FadeInView delay={0.06}>
+            <div className="max-w-2xl mx-auto project-content">
               <ProjectContent content={project.longDescription} />
             </div>
           </FadeInView>
 
           {project.images && project.images.length > 0 && (
-            <FadeInView delay={0.24} animateOnMount>
-              <div className="grid md:grid-cols-2 gap-4 mt-14">
+            <FadeInView delay={0.12}>
+              <div className="grid md:grid-cols-2 gap-4 mt-20 max-w-2xl mx-auto">
                 {project.images.map((image, index) => (
                   <div
                     key={index}
@@ -125,7 +143,19 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
               </div>
             </FadeInView>
           )}
-        </div>
+
+          <FadeInView delay={0.06}>
+            <div className="mt-32 pt-12 border-t border-portfolio-border max-w-2xl mx-auto">
+              <Link
+                href="/projects"
+                className="group inline-flex items-center gap-2 font-mono text-[10px] tracking-[0.15em] uppercase text-portfolio-text-secondary hover:text-portfolio-text-primary transition-colors"
+              >
+                <ArrowLeft className="w-3 h-3 transition-transform group-hover:-translate-x-0.5" />
+                All Projects
+              </Link>
+            </div>
+          </FadeInView>
+        </article>
       </main>
       <Footer />
     </>

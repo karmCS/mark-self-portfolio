@@ -52,10 +52,7 @@ export default function Home() {
                     Third-year Computer Engineering student building production-grade infrastructure.
                   </h2>
                   <p className="text-sm text-portfolio-text-secondary leading-relaxed">
-                    I'm Mark Calip, studying Computer Engineering at California State University, San Bernardino. I design and operate production-grade systems — from self-hosted cloud services to AI-powered monitoring pipelines — all running on hardware in my homelab.
-                  </p>
-                  <p className="text-sm text-portfolio-text-secondary leading-relaxed mt-4">
-                    My approach combines Docker, Kubernetes, and modern DevOps tools with AI-first thinking, preparing me for a career where infrastructure isn't just managed — it's intelligently architected.
+                    I'm Mark Calip, studying Computer Engineering at California State University, San Bernardino. With this new generation of artificial intelligence and its innovations leading the technology industry, I am very passionate about being on the forefront of this new future. I love discovering and finding new things to build, driving the scaffolding and infrastructure of a product with AI as the rapid developer.
                   </p>
                 </div>
               </FadeInView>
