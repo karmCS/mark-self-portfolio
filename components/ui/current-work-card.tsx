@@ -14,6 +14,13 @@ interface WorkItem {
 
 const currentWork: WorkItem[] = [
   {
+    title: 'Deficit',
+    subTitle: 'Solo developing an iOS app that helps combat atheletes, powerlifters, and weightlifters intelligently cut weight for their competitions.',
+    tags: ['iOS', 'Mobile App Development'],
+    status: 'Beta Testing',
+  },
+
+  {
     title: 'Project Bloo',
     subTitle: 'Developing web platform for Loma Linda based meal-prep delivery service. Cataloging and bringing exposure to small food businesses in the area',
     tags: ['Marketplace', 'Web-Development'],
