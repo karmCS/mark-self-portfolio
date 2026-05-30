@@ -49,7 +49,7 @@ export default function Home() {
                     </span>
                   </div>
                   <h2 className="text-2xl sm:text-3xl font-medium tracking-tight mb-6 leading-snug">
-                    Third-year Computer Engineering student building production-grade infrastructure.
+                    Third-year Computer Engineering student learning how to leverage AI tools for rapid production.
                   </h2>
                   <p className="text-sm text-portfolio-text-secondary leading-relaxed">
                     I'm Mark Calip, studying Computer Engineering at California State University, San Bernardino. With this new generation of artificial intelligence and its innovations leading the technology industry, I am very passionate about being on the forefront of this new future. I love discovering and finding new things to build, driving the scaffolding and infrastructure of a product with AI as the rapid developer.
