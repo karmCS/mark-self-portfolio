@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Space_Grotesk, Space_Mono } from 'next/font/google';
 import Header from '@/components/layout/Header';
+import Script from 'next/script';
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -32,6 +33,11 @@ export default function RootLayout({
       <body className="font-sans bg-portfolio-bg-primary text-portfolio-text-primary antialiased">
         <Header />
         {children}
+        <Script
+          defer
+          src="https://analytics.markcalip.com/script.js"
+          data-website-id="f5fdfe48-d1b7-4a9d-8587-8b00523f9e8c"
+        />
       </body>
     </html>
   );
